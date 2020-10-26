@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 class Test1 {
     @Test
     void test1() {
+        // Ok
         assertThat(true).isEqualTo(true);
     }
 
