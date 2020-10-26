@@ -1,2 +1,2 @@
 # Java-Homework
-Java Homework for beginners
+Java Homework for beginners with automated homework.
