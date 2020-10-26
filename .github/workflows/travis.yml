@@ -5,6 +5,7 @@ on:
     branches:
       - master
   pull_request:
+    types: [published, created, edited]
 
 jobs:
   build_and_test:
