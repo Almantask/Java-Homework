@@ -1,11 +1,9 @@
 package main.java.tests;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import org.junit.jupiter.api.Test;
-
 import java.util.Scanner;
 
-class Test1 {
+public class Calculator {
+
     public static void main(String[] args) {
         int num1;
         int num2;
@@ -32,7 +30,7 @@ class Test1 {
             case '/'   : result = num1 / num2;
                 break;
             default:
-                return; //123
+                return;
 
         }
         System.out.println("\nResult is :\n" + num1 + " " + smb + " " + num2 + " = " + result);
