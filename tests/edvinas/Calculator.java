@@ -1,10 +1,10 @@
 package edvinas;
 
-class Calculator {
+class Calculator{
     public static void main(String[] args) {
 
-        System.out.println(addition(""));
-        System.out.println(factorial(5));
+        System.out.println(addition("5!"));
+//        System.out.println(factorial(5));
 
     }
 
@@ -20,30 +20,24 @@ class Calculator {
         for (int i = 0; i < operators.length; i++) {
             if (operators[i].equals("+")) {
                 action += Integer.parseInt(operands[o++]);
-                System.out.println(action);
             }
             else if (operators[i].equals("-")) {
                 action -= Integer.parseInt(operands[o++]);
-                System.out.println(action);
             }
             else if (operators[i].equals("*")) {
                 action *= Integer.parseInt(operands[o++]);
-                System.out.println(action);
             }
             else if (operators[i].equals("/")) {
                 action /= Integer.parseInt(operands[o++]);
             }
-//            else if (operators[i].equals("!")) {
-//                int fact = 1;
-//                for (int j = 1; j < Integer.parseInt(operators[0]); j++)
-//                fact *= Integer.parseInt(operators[0]);
-//                agregate = fact;
-//            }
+            else if (operators[i].equals("!")) {
+                action = factorial(action);
+                o++;
+            }
 
         }
         return action;
     }
-
 
     private static boolean empty(String string) {
         if (string.isEmpty()) {
@@ -60,5 +54,3 @@ class Calculator {
         return factorial;
     }
 }
-
-
