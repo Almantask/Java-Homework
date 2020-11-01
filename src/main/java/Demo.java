@@ -45,6 +45,7 @@ public class Demo
                     b = Integer.parseInt(ary[i + 1]);
                     c = a / b;
                     break;
+                    
                 }
                 case "+" -> {
                     a = Integer.parseInt(ary[i - 1]);
