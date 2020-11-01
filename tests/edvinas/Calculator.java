@@ -10,25 +10,35 @@ class Calculator{
     }
 
     public static int calculator(String input) {
+        
         if (input.isEmpty() || input.contains(",")) {
-            return 0;
+            return 0;         
         } else {
+            
             String operators[] = input.split("[0-9]");
             printArray(operators);
+            
             String operands[] = input.split("[*+-/!]");
             printArray(operands);
+            
             int action = Integer.parseInt(operands[0]);
             int factorial = Integer.parseInt(operands[0]);
             int o = 1;
+            
             for (int i = 0; i < operators.length; i++) {
+                
                 if (operators[i].equals("+")) {
                     action += Integer.parseInt(operands[o++]);
+                    
                 } else if (operators[i].equals("-")) {
                     action -= Integer.parseInt(operands[o++]);
+                    
                 } else if (operators[i].equals("*")) {
                     action *= Integer.parseInt(operands[o++]);
+                    
                 } else if (operators[i].equals("/")) {
                     action /= Integer.parseInt(operands[o++]);
+                    
                 } else if (operators[i].equals("!")) {
                     factorial = factorial(factorial);
                     action = factorial;
