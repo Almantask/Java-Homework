@@ -29,7 +29,7 @@ It should be created using a public constructor that takes amount and unit.
 
 ## Units and Amounts (VERY EASY)
 
-Create a class Cooking.
+Create a class `Cooking`.
 
 ### Units (VERY EASY)
 
@@ -37,6 +37,8 @@ Inside a cooking class, create a static class called `Units`.
 Define all the measurement units inside this class.
 Have metrics for: OZ, POUND, GALLON, QUART, PINT, CUP, FL_OUNCE, TBSP, TSP.
 Use `public static final String` for every declaration.
+
+Also, create a method `String[] getValues()` to return all the known units. You will need this for the next steps.
 
 ### Amounts (VERY EASY)
 
@@ -62,6 +64,7 @@ For now, `convert` just supports TSP to ML conversion.
 Add the remaining conversions to ML: OZ, POUND, GALLON, QUART, PINT, CUP, FL_OUNCE, TBSP, TSP.
 
 Hint: create a function which uses a switch statement for checking for unit and then returning the right amount for it.
+That function should be place in `Amounts` class.
 
 ## Console conversion (MEDIUM)
 
@@ -71,6 +74,10 @@ A user should see a prompt to enter those and in case invalid (not existing unit
 a retry to enter it should be asked again.
 
 Hint: give user freedom and make sure capitalization does not matter. Use `toUpper()`.
+
+Hint: to check if the unit is valid, use the `getValues` function from the `Units` class.
+
+Hint: you can add one more function in the `Units` class `boolean isValid(String unit)` to check if the inputed String is a valid unit.
 
 ## Two-way conversion (HARD)
 
