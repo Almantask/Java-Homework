@@ -16,7 +16,6 @@ public class ReceipePrompt {
             System.out.println("Enter number from menu" +
                     "(To print menu again enter [4]):");
             int action = scanner.nextInt();
-            scanner.nextLine();
 
             switch (action) {
                 case 1:
@@ -24,7 +23,7 @@ public class ReceipePrompt {
                     String fromUnit = promptUnit();
                     String toUnit = promptUnit1();
                     CookingMeasurement calculated = CookingMeasurementConverter.convert(new CookingMeasurement(amount, fromUnit.toUpperCase()),toUnit);
-                    System.out.println("Amount = " + calculated.getAmount() + "\nUnit from which converted: " + fromUnit + "\nConverted to: " + toUnit);
+                    System.out.println("Amount = " + calculated.getAmount() + "\nUnit from which converted: " + fromUnit.toUpperCase() + "\nConverted to: " + toUnit.toUpperCase());
                     break;
                 case 2:
                     String TEXT_RED = "\u001B[31m";
@@ -45,7 +44,6 @@ public class ReceipePrompt {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter amount of unit:");
             float amount = scanner.nextFloat();
-            scanner.nextLine();
         return amount;
     }
 
