@@ -70,6 +70,8 @@ Create a class called `ReceipePrompt`, with a public method `void run()`, which 
 A user should see a prompt to enter those and in case invalid (not existing unit, negative amount) is entered, 
 a retry to enter it should be asked again.
 
+Hint: give user freedom and make sure capitalization does not matter. Use `toUpper()`.
+
 ## Two-way conversion (HARD)
 
 In `convert` function, add support for converting from/to every known unit described previously. 
