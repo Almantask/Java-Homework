@@ -61,6 +61,8 @@ For now, `convert` just supports TSP to ML conversion.
 
 Add the remaining conversions to ML: OZ, POUND, GALLON, QUART, PINT, CUP, FL_OUNCE, TBSP, TSP.
 
+Hint: create a function which uses a switch statement for checking for unit and then returning the right amount for it.
+
 ## Console conversion (EASY)
 
 Create a class called `ReceipePrompt`, with a public method `void run()`, which calls two private methods: 
@@ -68,11 +70,16 @@ Create a class called `ReceipePrompt`, with a public method `void run()`, which 
 A user should see a prompt to enter those and in case invalid (not existing unit, negative amount) is entered, 
 a retry to enter it should be asked again.
 
-## Two-way conversion (MEDIUM)
+## Two-way conversion (HARD)
+
+In `convert` function, add support for converting from/to every known unit described previously. 
+
+Hint: use the function from *More Conversions* step (with a switch statement) to getAmount
+amount of original measurement and measurement you need to convert it to, take their ration and multiple it original amount from that ratio. 
 
 ## Menu (MEDIUM)
 
-Updated `ReceipePrompt` class `Run()` method. It no longer does the two prompts.
+Update `ReceipePrompt` class `Run()` method. It no longer does the two prompts.
 Instead, it prints a menu first:
 
 ```
@@ -82,6 +89,8 @@ Instead, it prints a menu first:
 
 User is prompted to select either option 1 or 2. Selecting option 1 does the same as before (basic conversion).
 Selecting option 2 prints "to be implemented" in the console (in red).
+
+Hint: don't forget to reset the console color after it prints text in red.
 
 ## Recipe conversion (VERY HARD)
 
