@@ -18,10 +18,5 @@ public class CookingMeasurement {
         return unit;
     }
 
-    @Override
-    public String toString() {
-        return
-                "Amount =" + amount +
-                        "\nUnit= " + unit;
-    }
+
 }
