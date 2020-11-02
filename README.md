@@ -22,23 +22,23 @@ Trying to make sense reading amounts in a recipe might be really tricky:
 
 You need to implement a function which does the conversions for cooking amounts.
 
-## Cooking Measurement
+## Cooking Measurement (VERY EASY)
 
 Create a class called `CookingMeasurement`. Publicly, it should only have 2 methods: `float getAmount()`, `String getUnit()`.
 It should be created using a public constructor that takes amount and unit.
 
-## Units and Amounts
+## Units and Amounts (VERY EASY)
 
 Create a class Cooking.
 
-### Units
+### Units (VERY EASY)
 
 Inside a cooking class, create a static class called `Units`.
 Define all the measurement units inside this class.
 Have metrics for: OZ, POUND, GALLON, QUART, PINT, CUP, FL_OUNCE, TBSP, TSP.
 Use `public static final String` for every declaration.
 
-### Amounts
+### Amounts (VERY EASY)
 
 Inside a cooking class, add one more static class called `Amounts`.
 Each amount should translate to ML (including ML itself = 1).
@@ -49,7 +49,7 @@ public static final float TSP = 5;
 public static final float ML = 1;
 ```
 
-## Get ready for conversions
+## Get ready for conversions (VERY EASY)
 
 Create a class CookingMeasurementConverter, which has a static method `CookingMeasurement convert(CookingMeasurement originalMeasurement, String unit)`
 
@@ -63,7 +63,7 @@ Add the remaining conversions to ML: OZ, POUND, GALLON, QUART, PINT, CUP, FL_OUN
 
 Hint: create a function which uses a switch statement for checking for unit and then returning the right amount for it.
 
-## Console conversion (EASY)
+## Console conversion (MEDIUM)
 
 Create a class called `ReceipePrompt`, with a public method `void run()`, which calls two private methods: 
 `void promptAmount()` and `void promptUnit()` that reads both the amount and the unit for cooking measurement.
@@ -106,6 +106,6 @@ Algorithm:
 6. ..Go back to the number and convert it to ML...
 7. ..And change the word after number to ML.
 
-## Future- refactor using enum
+## Future- refactor using enum (MEDIUM)
 
 TBD
