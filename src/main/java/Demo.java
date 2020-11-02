@@ -12,6 +12,7 @@ public class Demo
         Scanner sc = new Scanner(System.in);
         String inputString;
         System.out.println("Enter a string :");
+        System.out.println("Trying to push directly to git.");
         inputString = sc.nextLine();
 
 //        char a -inputString.charAt(1)
