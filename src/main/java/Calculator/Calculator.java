@@ -23,7 +23,7 @@ public class Calculator {
         }
         Matcher matcher = EXPRESSION_PATTERN.matcher(expression);
         if (!matcher.matches()) {
-            System.out.println("Invalid expression.");
+            System.out.println("Invalid expression...");
             return 0;
         }
         int argument1 = Integer.parseInt(matcher.group(1));
