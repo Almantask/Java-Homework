@@ -41,32 +41,22 @@ public class ReceipePrompt {
         System.out.println("Enter ingredient, amount and unit: ");
         String input = scanner.nextLine();
 
-
         String [] measurements = input.split(" ");
 
         for (int i = 0; i < measurements.length; i++) {
-
             if (checkIfANumber(measurements[i])) {
-
                 float number = Float.parseFloat(measurements[i++]);
 
                 if (Cooking.Units.isValid(measurements[i])) {
-
                         CookingMeasurement calculated = CookingMeasurementConverter.convert(new CookingMeasurement(number, measurements[i].toUpperCase()), "ML");
                         System.out.println(" Amount: " + calculated.getAmount() + " ML");
-
-
                 }
-
             }
             if (!checkIfANumber(measurements[i]) && !Cooking.Units.isValid(measurements[i])) {
                 String component = measurements[i];
                 System.out.println(component);
             }
-
         }
-
-
     }
 
     private boolean checkIfANumber (String s) {
@@ -78,14 +68,11 @@ public class ReceipePrompt {
                }
         }
 
-
-
     private void recipeConverter() {
         String TEXT_RED = "\u001B[31m";
         String TEXT_RESET = "\u001B[0m";
         System.out.println(TEXT_RED + "To be implemented!" + TEXT_RESET);
     }
-
 
     private void cookingMeasurementConverter () {
         float amount = promptAmount();
