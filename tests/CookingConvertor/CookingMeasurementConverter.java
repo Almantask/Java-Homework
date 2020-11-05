@@ -7,6 +7,5 @@ public class CookingMeasurementConverter {
         return new CookingMeasurement(newAmount, unit);
     }
 
-
 }
 

@@ -1,5 +1,6 @@
 package CookingConvertor;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ReceipePrompt {
@@ -8,7 +9,7 @@ public class ReceipePrompt {
     public void run() {
         Scanner scanner = new Scanner(System.in);
 
-        menu();
+        displayMenu();
         boolean quit =false;
 
         while (!quit) {
@@ -19,32 +20,88 @@ public class ReceipePrompt {
 
             switch (action) {
                 case 1:
-                    float amount = promptAmount();
-                    String fromUnit = promptUnit();
-                    String toUnit = promptUnit1();
-                    CookingMeasurement calculated = CookingMeasurementConverter.convert(new CookingMeasurement(amount, fromUnit.toUpperCase()),toUnit);
-                    System.out.println("Amount = " + calculated.getAmount() + "\nUnit from which converted: " + fromUnit.toUpperCase() + "\nConverted to: " + toUnit.toUpperCase());
+                    cookingMeasurementConverter();
                     break;
                 case 2:
-                    String TEXT_RED = "\u001B[31m";
-                    String TEXT_RESET = "\u001B[0m";
-                    System.out.println(TEXT_RED + "To be implemented!" + TEXT_RESET);
+                    recipeConverter();
                     break;
                 case 3:
                     quit = true;
                     break;
                 case 4:
-                    menu();
+                    displayMenu();
                     break;
             }
         }
     }
 
+    public void recipeFromStringConverter () {
+    Scanner scanner = new Scanner(System.in);
+        String input = "Sugar 10 tsp Rice 2 tsp milk 1 tsp water 2 Oz";
+
+        String [] measurements = input.split(" ");
+
+        for (int i = 0; i < measurements.length; i++) {
+
+            if (checkIfANumber(measurements[i])) {
+
+                float number = Float.parseFloat(measurements[i++]);
+
+                if (Cooking.Units.isValid(measurements[i])) {
+
+                        CookingMeasurement calculated = CookingMeasurementConverter.convert(new CookingMeasurement(number, measurements[i].toUpperCase()), "ML");
+                        System.out.println(" Amount: " + calculated.getAmount() + " ML");
+
+
+                }
+
+            }
+            if (!checkIfANumber(measurements[i]) && !Cooking.Units.isValid(measurements[i])) {
+                String component = measurements[i];
+                System.out.println(component);
+            }
+
+        }
+
+
+    }
+
+    private boolean checkIfANumber (String s) {
+               try {
+                   float number = Float.parseFloat(s);
+                   return true;
+               } catch (NumberFormatException e) {
+                   return false;
+               }
+        }
+
+
+
+    private void recipeConverter() {
+        String TEXT_RED = "\u001B[31m";
+        String TEXT_RESET = "\u001B[0m";
+        System.out.println(TEXT_RED + "To be implemented!" + TEXT_RESET);
+    }
+
+
+    private void cookingMeasurementConverter () {
+        float amount = promptAmount();
+        String fromUnit = promptUnit();
+        String toUnit = promptUnit1();
+        CookingMeasurement calculated = CookingMeasurementConverter.convert(new CookingMeasurement(amount, fromUnit.toUpperCase()),toUnit);
+        System.out.println("Amount = " + calculated.getAmount() + "\nUnit from which converted: " + fromUnit.toUpperCase() + "\nConverted to: " + toUnit.toUpperCase());
+    }
+
     private float promptAmount() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter amount of unit:");
+        try {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Enter amount of unit:");
             float amount = scanner.nextFloat();
-        return amount;
+            return amount;
+        } catch (InputMismatchException e) {
+            System.out.println("You need to enter number!!!");
+        }
+        return -1;
     }
 
     private String promptUnit() {
@@ -73,7 +130,7 @@ public class ReceipePrompt {
         return unit;
     }
 
-    private void menu () {
+    private void displayMenu () {
         System.out.println("Menu");
         System.out.println("[1] - basic conversion of a measurement\n" +
                 "[2] - recipe processing\n" +

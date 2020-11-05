@@ -5,44 +5,45 @@ public class Cooking {
 
     public static void main(String[] args) {
 
-        ReceipePrompt prompt = new ReceipePrompt();
-        prompt.run();
-
-
+        ReceipePrompt converter = new ReceipePrompt();
+        converter.recipeFromStringConverter();
+//        ReceipePrompt prompt = new ReceipePrompt();
+//        prompt.run();
     }
+
     public static class Amounts {
-        public static final float TSP = 5f;
-        public static final float ML = 1f;
-        public static final float OZ = 28f;
-        public static final float POUND= 454f;
-        public static final float GALLON= 3.8f;
-        public static final float QUART= 0.95f;
-        public static final float PINT= 473f;
-        public static final float CUP= 237f;
-        public static final float FL_OUNCE= 30f;
-        public static final float TBSP= 15f;
+        private static final float TSP = 5f;
+        private static final float ML = 1f;
+        private static final float OZ = 28f;
+        private static final float POUND= 454f;
+        private static final float GALLON= 3.8f;
+        private static final float QUART= 0.95f;
+        private static final float PINT= 473f;
+        private static final float CUP= 237f;
+        private static final float FL_OUNCE= 30f;
+        private static final float TBSP= 15f;
 
         public static float value (String unit) {
             switch (unit) {
-                case "TSP":
+                case Units.TSP:
                     return TSP;
-                case "ML":
+                case Units.ML:
                     return ML;
-                case "OZ":
+                case Units.OZ:
                     return OZ;
-                case "POUND":
+                case Units.POUND:
                     return POUND;
-                case "GALLON":
+                case Units.GALLON:
                     return GALLON;
-                case "QUART":
+                case Units.QUART:
                     return QUART;
-                case "PINT":
+                case Units.PINT:
                     return PINT;
-                case "CUP":
+                case Units.CUP:
                     return CUP;
-                case "FL_OUNCE":
+                case Units.FL_OUNCE:
                     return FL_OUNCE;
-                case "TBSP":
+                case Units.TBSP:
                     return TBSP;
                 default:
                 return 0;
@@ -147,10 +148,10 @@ public class Cooking {
         public static boolean isValid (String input) {
             for (String value : values) {
                 if (input.toUpperCase().equals(value)) {
-                    return false;
+                    return true;
                 }
             }
-            return true;
+            return false;
         }
 
 

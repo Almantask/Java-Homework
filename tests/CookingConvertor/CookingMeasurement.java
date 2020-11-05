@@ -17,6 +17,4 @@ public class CookingMeasurement {
     public String getUnit() {
         return unit;
     }
-
-
 }
