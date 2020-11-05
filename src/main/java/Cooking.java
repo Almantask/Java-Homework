@@ -12,7 +12,33 @@ public class Cooking {
         public static final String TSP;
     }
 
-    String[] getValues {
+    String[] getValues(String OZ, String POUND, String GALLON, String QUART, String PINT, String CUP, String FL_OUNCE, String TBSP, String TSP) {
+    if (OZ != null) {
+        return OZ;
+        }
+    if (POUND != null) {
+        return;
+        }
+    if (GALLON != null) {
+        return;
+        }
+    if (QUART != null) {
+        return;
+        }
+    if (PINT != null) {
+        return;
+        }
+    if (CUP != null) {
+        return;
+        }
+    if (FL_OUNCE != null) {
+        return;
+    }
+    if (TBSP != null) {
+        return;
+    }
+    if (TSP != null) {
+        return;
     }
 
     static class Amounts {
