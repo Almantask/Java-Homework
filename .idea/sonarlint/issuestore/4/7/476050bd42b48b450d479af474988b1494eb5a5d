@@ -1,0 +1,7 @@
+
+0
+java:S5838	"Use isTrue() instead.(›“Øµýÿÿÿÿ
+M
+java:S3415	"2Change this assertion to not compare two literals.(›“Øµýÿÿÿÿ
+f
+java:S5863	"KReplace this assertion to not have the same actual and expected expression.(›“Øµýÿÿÿÿ
