@@ -5,10 +5,8 @@ public class Cooking {
 
     public static void main(String[] args) {
 
-        ReceipePrompt converter = new ReceipePrompt();
-        converter.recipeFromStringConverter();
-//        ReceipePrompt prompt = new ReceipePrompt();
-//        prompt.run();
+        ReceipePrompt prompt = new ReceipePrompt();
+        prompt.run();
     }
 
     public static class Amounts {

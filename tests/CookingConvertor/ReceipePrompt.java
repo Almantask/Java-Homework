@@ -23,7 +23,8 @@ public class ReceipePrompt {
                     cookingMeasurementConverter();
                     break;
                 case 2:
-                    recipeConverter();
+                    System.out.println("For the recipe processing to work on multiple ingredients you have to write in syntax 'ingredient amount unit' and repeat in the same order till your done");
+                    recipeFromStringConverter();
                     break;
                 case 3:
                     quit = true;
@@ -37,7 +38,9 @@ public class ReceipePrompt {
 
     public void recipeFromStringConverter () {
     Scanner scanner = new Scanner(System.in);
-        String input = "Sugar 10 tsp Rice 2 tsp milk 1 tsp water 2 Oz";
+        System.out.println("Enter ingredient, amount and unit: ");
+        String input = scanner.nextLine();
+
 
         String [] measurements = input.split(" ");
 
