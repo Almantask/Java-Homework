@@ -1,21 +1,37 @@
 package Calculator;
 
 public class Calculator {
-    private char[] defaultOperators = {'+', '-', 'x', '%', '/', '!'};
-    private char[] charArray;
+    private char[] operators = {'+', '-', 'x', '%', '/', '!'};
 
     public int calculate(String expression) {
         if (expression.isEmpty() || expression.equals("")) {
             return 0;
         }
-        charArray = expression.toCharArray();
-        int result = Integer.parseInt(String.valueOf(charArray[0]));
-        for (int i = 1; i < charArray.length; i = i + 2) {
-            if ((i + 1) != charArray.length) {
-                result = operation(result, charArray[i], Integer.parseInt(String.valueOf(charArray[i + 1])));
-            } else result = operation(result, charArray[i], 0);
+
+        String[] arguments = expression.split("[-+%/x!]");
+        char[] expressionOperators = getExpressionOperators(expression);
+        int result = Integer.parseInt(String.valueOf(arguments[0]));
+        for (int i = 0; i < expressionOperators.length; i++) {
+            if (i + 1 != arguments.length) {
+                result = operation(result, expressionOperators[i], Integer.parseInt(String.valueOf(arguments[i + 1])));
+            } else result = operation(result, expressionOperators[i], 0);
         }
         return result;
+    }
+
+    private char[] getExpressionOperators(String expression) {
+        char[] charArray = expression.toCharArray();
+        char[] expressionOperators = new char[0];
+
+        for (int i = 0; i < charArray.length; i++) {
+            for (int j = 0; j < operators.length; j++) {
+                if (charArray[i] == operators[j]) {
+                    expressionOperators = Arrays.biggerArray(expressionOperators);
+                    expressionOperators[expressionOperators.length - 1] = operators[j];
+                }
+            }
+        }
+        return expressionOperators;
     }
 
     private Integer operation(int arg1, char operator, int arg2) {
