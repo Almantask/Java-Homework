@@ -19,18 +19,18 @@ public class RocketEquation {
 
         public static long neededMass (long [] array) {
             long sumOfMass = 0;
-            for (int i = 0; i < array.length; i++) {
-                long oneModule = (array[i] / 3 - 2);
+            for (long l : array) {
+                long oneModule = (l / 3 - 2);
                 sumOfMass += oneModule;
-        }
+            }
             return sumOfMass;
     }
 
 
         public static long neededAdditionalMass (long [] array) {
             long sumOfMass = 0;
-            for (int i = 0; i < array.length; i++) {
-                long oneModule = (array[i] / 3 - 2);
+            for (long l : array) {
+                long oneModule = (l / 3 - 2);
                 oneModule = neededAdditionalMass(oneModule);
                 sumOfMass += oneModule;
             }
