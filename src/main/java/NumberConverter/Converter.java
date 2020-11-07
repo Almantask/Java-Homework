@@ -22,6 +22,11 @@ public class Converter {
                     case "M" -> aryNumb[i] = 1000;
                 }
 
+
+
+
+
+
             }
             for (int i = 0; i < aryNumb.length; i++) {
                 if (aryNumb[i] < aryNumb[i + 1]) {
