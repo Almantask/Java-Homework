@@ -2,6 +2,8 @@ package cooking;
 
 import java.util.Scanner;
 
+import static cooking.Cooking.Units.*;
+
 public class ReceipePrompt {
 
     private float amount;
@@ -33,8 +35,20 @@ public class ReceipePrompt {
         System.out.println("Enter one of these elements:" +
                 "TSP  TBSP  FL_OUNCE  CUP  PINT  QUART  GALLON  OZ  POUND ");
         unit = myObj1.nextLine().toUpperCase();
+        while (!validate(unit)) {
+            System.out.println("Please enter right unit: ");
+            unit = myObj1.nextLine().toUpperCase();
+        }
+    }
 
 
+    public boolean validate(String unit) {
+        boolean result1 = false;
+        String[] value = {TSP, TBSP, FL_OUNCE, CUP, PINT, QUART, GALLON, OZ, POUND};
+        for (String s : value)
+            if (unit.equalsIgnoreCase(s))
+                result1 = true;
+        return result1;
     }
 }
 

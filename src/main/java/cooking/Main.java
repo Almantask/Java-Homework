@@ -10,7 +10,7 @@ package cooking;
             System.out.println(receipePrompt.getAmount());
             CookingMeasurement cookingMeasurement = new CookingMeasurement(receipePrompt.getAmount(), receipePrompt.getUnit());
             CookingMeasurement result = CookingMeasurementConverter.convert(cookingMeasurement, "Blablabla");
-
-
+            System.out.println(result.getAmount());
+            System.out.println(result.getUnit());
         }
     }
