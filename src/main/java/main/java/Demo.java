@@ -3,7 +3,7 @@ package main.java;
 import java.util.Scanner;
 
 public class Demo {
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
 
         boolean repeat = true;
@@ -23,17 +23,15 @@ public class Demo {
             int num2 = scan.nextInt();
 
 
-
-            int result = calculation(action,num1,num2);
+            int result = calculation(action, num1, num2);
             System.out.println("Result is: " + result);
 
             System.out.println("Do you want to repeat? YES / NO ");
             String userAnswer = stringScan.nextLine();
 
-            if(userAnswer.equalsIgnoreCase("no")){
+            if (userAnswer.equalsIgnoreCase("no")) {
                 repeat = false;
             }
-
 
 
         }
@@ -46,13 +44,13 @@ public class Demo {
             case '+': {
                 return first + second;
             }
-            case '-' : {
+            case '-': {
                 return first - second;
             }
-            case '/' : {
+            case '/': {
                 return first / second;
             }
-            case '*' : {
+            case '*': {
                 return first * second;
             }
             default: {
