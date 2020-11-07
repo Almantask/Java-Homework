@@ -7,7 +7,7 @@ public class Day1 {
     public static void main(String[] args) {
 
         List<String> input;
-        input = FileUtil.loadFile("Advent/day1");
+        input = FileUtil.loadFile("src/java/Advent/day1");
         int sum = 0;
         for (String s : input) {
 
