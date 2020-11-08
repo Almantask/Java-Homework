@@ -33,7 +33,7 @@ class PrimeNumbersTests {
     void findAll_returns_expected(int rangeEnd, int[] expectedPrimes){
         int[] primes = PrimeNumbers.findAll(rangeEnd);
 
-        assertThat(primes).contains(expectedPrimes);
+        assertThat(prime).contains(expectedPrimes);
     }
 
     private static Stream<Arguments> primesInRange() {

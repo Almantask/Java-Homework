@@ -1,8 +1,5 @@
 package Numbers;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class PrimeNumbers {
     public static int[] findAll(int rangeEnd) {
         int[] numbers = new int[0];
