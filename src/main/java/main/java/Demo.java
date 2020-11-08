@@ -4,7 +4,7 @@ import java.util.stream.IntStream;
 
 public class Demo {
     public static void main(String[] args) {
-        System.out.println("Fuel array: " + Arrays.toString(multiply(mass)));
+        System.out.println("Fuel array: " + Arrays.toString(sumOfFuel(mass)));
     }
 
     public static int[] mass = {66910, 78957, 58510,142350, 105820, 87317, 100743, 51390, 92804, 80752, 70169, 111892, 104715,
@@ -16,14 +16,16 @@ public class Demo {
             52261, 117429, 82291, 110373, 67626, 58014, 125342, 129508, 96332
     };
 
-    public static int[] multiply(int[] mass) {
+    public static int[] sumOfFuel(int[] mass) {
         int[] array = new int[mass.length];
-        //int sum = IntStream.of(array).sum();
+
         for (int i = 0; i < mass.length; i++) {
             array[i] = (int) Math.floor(mass[i] / 3 - 2);
             int sum = IntStream.of(array).sum();
 
-            if (i == array.length - 1) {
+            //To show sum of fuel only 1 time
+            if (i == array.length - 1)
+            {
                 System.out.println("The sum of fuel: " + sum);
             }
         }
