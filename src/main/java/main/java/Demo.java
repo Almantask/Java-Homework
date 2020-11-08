@@ -23,7 +23,7 @@ public class Demo {
             array[i] = (int) Math.floor(mass[i] / 3 - 2);
             int sum = IntStream.of(array).sum();
 
-            //Prints sum of fuel only 1 time
+            //Prints sum of fuel only 1 time.
             if (i == array.length - 1)
             {
                 System.out.println("The sum of fuel: " + sum);
