@@ -1,4 +1,4 @@
-package main.java.tests;
+package main.java.tests.Numbers;
 
 import Numbers.NumbersCategory;
 import org.junit.jupiter.api.Test;

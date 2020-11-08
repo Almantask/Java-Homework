@@ -1,4 +1,4 @@
-package main.java.tests;
+package main.java.tests.Numbers;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
