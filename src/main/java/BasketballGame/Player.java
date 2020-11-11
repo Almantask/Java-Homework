@@ -1,10 +1,10 @@
 package BasketballGame;
 
-public class Player{
+public class Player {
 
-    private Human human;
-    private int playerNumber;
-    private String position;
+    private final Human human;
+    private final int playerNumber;
+    private final String position;
 
     public Player(Human human, int playerNumber, String position) {
         this.human = human;

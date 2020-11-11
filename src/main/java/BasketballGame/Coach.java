@@ -2,7 +2,7 @@ package BasketballGame;
 
 public class Coach {
 
-    private Human coach;
+    private final Human coach;
 
     public Coach(Human coach) {
         this.coach = coach;

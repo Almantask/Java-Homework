@@ -40,5 +40,5 @@ public class DateTime {
 
     public int getHour() {
         return hour;
-}
+    }
 }

@@ -10,7 +10,7 @@ public class Team {
     private Player playerFour;
     private Player playerFive;
 
-    public Team(String teamName,Coach coach, Player playerOne, Player playerOTwo, Player playerThree, Player playerFour, Player playerFive) {
+    public Team(String teamName, Coach coach, Player playerOne, Player playerOTwo, Player playerThree, Player playerFour, Player playerFive) {
         this.teamName = teamName;
         this.coach = coach;
         this.playerOne = playerOne;
