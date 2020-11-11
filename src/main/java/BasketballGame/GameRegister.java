@@ -109,7 +109,7 @@ public class GameRegister {
         }
     }
 
-    // Create program for spaces in info template
+    // Created this big System.out,println, because i haven't figured how to do it with array so that the table still look good.
 
     public void printGameInformation(Game game) {
         DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
