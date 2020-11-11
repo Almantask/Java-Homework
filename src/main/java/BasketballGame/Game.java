@@ -11,17 +11,12 @@ public class Game {
     private int teamTwoScore;
     private LocalDateTime gameTime;
 
-
     public Game(Team teamOne, int teamOneScore, Team teamTwo, int teamTwoScore, LocalDateTime gameTime) {
         this.teamOne = teamOne;
         this.teamTwo = teamTwo;
         this.teamOneScore = teamOneScore;
         this.teamTwoScore = teamTwoScore;
         this.gameTime = gameTime;
-    }
-
-    public Game() {
-
     }
 
     public static String getWinner(Game game) {

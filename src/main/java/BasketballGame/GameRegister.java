@@ -37,7 +37,6 @@ public class GameRegister {
             if (game.get(i).getGameTime().isBefore(localDateTime)) {
                 System.out.println("********[The match date: " + game.get(i).getGameTime().format(myFormatObj) + "]**********");
                 System.out.println("Team " + game.get(i).getTeamOne().getTeamName() + " score (" + game.get(i).getTeamOneScore() + ") vs (" + game.get(i).getTeamTwoScore() + ") team " + game.get(i).getTeamTwo().getTeamName());
-
             }
         }
     }
@@ -49,7 +48,6 @@ public class GameRegister {
             if (game.get(i).getGameTime().isAfter(localDateTime)) {
                 System.out.println("********[The match date: " + game.get(i).getGameTime().format(myFormatObj) + "]**********");
                 System.out.println("Team " + game.get(i).getTeamOne().getTeamName() + " vs " + " team " + game.get(i).getTeamTwo().getTeamName());
-
             }
         }
     }
@@ -95,7 +93,6 @@ public class GameRegister {
                 }
             }
         }
-
     }
 
     public void printTodaysGames() {
@@ -185,7 +182,6 @@ public class GameRegister {
         }
         return -1;
     }
-
 
 }
 
