@@ -179,9 +179,6 @@ public class GameRegister {
     public static String fixedLengthString(String string, int length) {
         return String.format("%-" + length + "." + length + "s", string);
     }
-    public static String lengthOf(String string, int length) {
-        return String.format("%07d" + length + ".", string);
-    }
 
 
 }
