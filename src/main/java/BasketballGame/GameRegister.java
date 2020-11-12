@@ -85,7 +85,7 @@ public class GameRegister {
         }
     }
 
-    public void printGameInformationEasier (Game game) {
+    public void printGameInformation (Game game) {
         int [] teamOne = {PlayerNumber("One", game),PlayerNumber("Two", game), PlayerNumber("Three", game), PlayerNumber("Four", game),PlayerNumber("Five", game)};
         int [] teamTwo = {PlayerNumberTwo("One", game),PlayerNumberTwo("Two", game), PlayerNumberTwo("Three", game),PlayerNumberTwo("Four", game),PlayerNumberTwo("Five", game)};
         String [] teamOneNames = {PlayerName("One", game),PlayerName("Two", game),PlayerName("Three", game), PlayerName("Four", game),PlayerName("Five", game) };

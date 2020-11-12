@@ -31,24 +31,24 @@ public class Main {
         Player mahonePlayer1 = new Player(mahone, 2, "SF");
 
         Team
-                thunderCats =
-                new Team("Thunder cats", coach, lebronPlayer, kobePlayer, hardenPlayer, sabonisPlayer, mahonePlayer);
+                okc =
+                new Team("Oklahoma City Thunder", coach, lebronPlayer, kobePlayer, hardenPlayer, sabonisPlayer, mahonePlayer);
         Team
                 clevelandCavaliers =
                 new Team("Cleveland cavaliers", coach1, lebronPlayer1, kobePlayer1, hardenPlayer1, sabonisPlayer1, mahonePlayer1);
 
-        Game gameOne = new Game(thunderCats, 62, clevelandCavaliers, 60, LocalDateTime.of(2020, 11, 1, 10, 50));
-        Game gameTwo = new Game(thunderCats, 96, clevelandCavaliers, 69, LocalDateTime.of(2020, 11, 10, 11, 55));
-        Game gameThree = new Game(thunderCats, 0, clevelandCavaliers, 0, LocalDateTime.of(2020, 11, 12, 11, 55));
+        Game gameOne = new Game(okc, 62, clevelandCavaliers, 60, LocalDateTime.of(2020, 11, 1, 10, 50));
+        Game gameTwo = new Game(okc, 96, clevelandCavaliers, 69, LocalDateTime.of(2020, 11, 10, 11, 55));
+        Game gameThree = new Game(okc, 0, clevelandCavaliers, 0, LocalDateTime.of(2020, 11, 12, 11, 55));
 
         gameRegister.addGame(gameOne);
         gameRegister.addGame(gameTwo);
         gameRegister.addGame(gameThree);
-//        gameRegister.getGamesAtDateTime(new DateTime(2020, 11));
-//        gameRegister.printGameRegister();
-//        gameRegister.getGamesOfThisWeek();
-        gameRegister.printGameInformationEasier(gameTwo);
-//        gameRegister.printGameInformation(gameTwo);
+        gameRegister.getGamesAtDateTime(new DateTime(2020, 11));
+        gameRegister.printGameRegister();
+        gameRegister.getGamesOfThisWeek();
+        gameRegister.printGameInformation(gameTwo);
+
 
 
 
