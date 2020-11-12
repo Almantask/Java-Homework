@@ -13,6 +13,8 @@ public class GameRegister {
     //I know we didn't lear anything about ArrayList, but i have did that on my own and for
     // it's a lot easier to do it with ArrayList.
     private final ArrayList<Game> game;
+    private LocalDateTime localDateTime = LocalDateTime.now();
+    private final DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 
     public GameRegister() {
         this.game = new ArrayList<Game>();
@@ -23,107 +25,86 @@ public class GameRegister {
     }
 
     public void printGameRegister() {
-        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         for (int i = 0; i < game.size(); i++) {
-            System.out.println("********[The match date: " + game.get(i).getGameTime().format(myFormatObj) + "]**********");
-            System.out.println("Team " + game.get(i).getTeamOne().getTeamName() + " vs " + "team " + game.get(i).getTeamTwo().getTeamName());
+            printDate(i);
         }
     }
 
     public void printPastGames() {
-        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-        LocalDateTime localDateTime = LocalDateTime.now();
         for (int i = 0; i < game.size(); i++) {
             if (game.get(i).getGameTime().isBefore(localDateTime)) {
-                System.out.println("********[The match date: " + game.get(i).getGameTime().format(myFormatObj) + "]**********");
-                System.out.println("Team " + game.get(i).getTeamOne().getTeamName() + " score (" + game.get(i).getTeamOneScore() + ") vs (" + game.get(i).getTeamTwoScore() + ") team " + game.get(i).getTeamTwo().getTeamName());
+                printDateWithScores(i);
             }
         }
     }
 
     public void printFutureGames() {
-        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-        LocalDateTime localDateTime = LocalDateTime.now();
         for (int i = 0; i < game.size(); i++) {
             if (game.get(i).getGameTime().isAfter(localDateTime)) {
-                System.out.println("********[The match date: " + game.get(i).getGameTime().format(myFormatObj) + "]**********");
-                System.out.println("Team " + game.get(i).getTeamOne().getTeamName() + " vs " + " team " + game.get(i).getTeamTwo().getTeamName());
+                printDate(i);
             }
         }
     }
 
     public void getGamesOfThisWeek() {
-        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-        LocalDateTime today = LocalDateTime.now();
-        LocalDateTime monday = today.with(previousOrSame(MONDAY));
-        LocalDateTime sunday = today.with(nextOrSame(SUNDAY));
+        LocalDateTime monday = localDateTime.with(previousOrSame(MONDAY));
+        LocalDateTime sunday = localDateTime.with(nextOrSame(SUNDAY));
         for (int i = 0; i < game.size(); i++) {
             if (monday.getDayOfMonth() <= game.get(i).getGameTime().getDayOfMonth() && sunday.getDayOfMonth() >= game.get(i).getGameTime().getDayOfMonth()) {
-                System.out.println("********[The match date: " + game.get(i).getGameTime().format(myFormatObj) + "]**********");
-                System.out.println("Team " + game.get(i).getTeamOne().getTeamName() + " vs " + "team " + game.get(i).getTeamTwo().getTeamName());
+                printDate(i);
             }
         }
     }
 
     public void getGamesAtDateTime(DateTime dateTime) {
-        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
-        int year = dateTime.getYear();
-        int month = dateTime.getMonth();
-        int day = dateTime.getDay();
-        int hour = dateTime.getHour();
+        int year = dateTime.getYear(),month = dateTime.getMonth(), day = dateTime.getDay(), hour = dateTime.getHour();
         for (int i = 0; i < game.size(); i++) {
-            int gameYear = game.get(i).getGameTime().getYear();
-            int gameMonth = game.get(i).getGameTime().getMonth().getValue();
-            int gameDay = game.get(i).getGameTime().getDayOfMonth();
-            int gameHour = game.get(i).getGameTime().getHour();
+            int gameYear = game.get(i).getGameTime().getYear(), gameMonth = game.get(i).getGameTime().getMonth().getValue();
+            int gameDay = game.get(i).getGameTime().getDayOfMonth(), gameHour = game.get(i).getGameTime().getHour();
             if (year != 0 && month != 0 && day != 0 && hour != 0) {
                 if (year == gameYear && month == gameMonth && day == gameDay && hour == gameHour) {
-                    System.out.println("********[The match date: " + game.get(i).getGameTime().format(myFormatObj) + "]**********");
-                    System.out.println("Team " + game.get(i).getTeamOne().getTeamName() + " vs " + "team " + game.get(i).getTeamTwo().getTeamName());
+                    printDate(i);
                 }
             } else if (year != 0 && month != 0 && day != 0) {
                 if (year == gameYear && month == gameMonth && day == gameDay) {
-                    System.out.println("********[The match date: " + game.get(i).getGameTime().format(myFormatObj) + "]**********");
-                    System.out.println("Team " + game.get(i).getTeamOne().getTeamName() + " vs " + "team " + game.get(i).getTeamTwo().getTeamName());
+                    printDate(i);
                 }
             } else if (year != 0 && month != 0) {
                 if (year == gameYear && month == gameMonth) {
-                    System.out.println("********[The match date: " + game.get(i).getGameTime().format(myFormatObj) + "]**********");
-                    System.out.println("Team " + game.get(i).getTeamOne().getTeamName() + " vs " + "team " + game.get(i).getTeamTwo().getTeamName());
+                    printDate(i);
                 }
             }
         }
     }
 
     public void printTodaysGames() {
-        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
-        int localDate = LocalDateTime.now().getDayOfMonth();
         for (int i = 0; i < game.size(); i++) {
-            if (localDate == (game.get(i).getGameTime().getDayOfMonth())) {
-                System.out.println("********[The match date: " + game.get(i).getGameTime().format(myFormatObj) + "]**********");
-                System.out.println("Team " + game.get(i).getTeamOne().getTeamName() + " vs " + "team " + game.get(i).getTeamTwo().getTeamName());
+            if (localDateTime.getDayOfMonth() == (game.get(i).getGameTime().getDayOfMonth())) {
+                printDate(i);
             }
         }
     }
 
-    // Created this big System.out,println, because i haven't figured how to do it with array so that the table still look good.
-
-    public void printGameInformation(Game game) {
-        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-        System.out.println("| " + game.getTeamOne().getTeamName() + " |                         |    | " + game.getTeamOneScore() + ":" + game.getTeamTwoScore() + " |    | " + game.getTeamTwo().getTeamName() + " |                     |");
-        System.out.println("|--------------|-------------------------|----|-------|----|---------------------|---------------------|");
-        System.out.println("|" + game.getTeamOne().getCoach().getCoachTitle() + "         |" + game.getTeamOne().getCoach().getCoach().getName() + "           |    |       |    |" + game.getTeamTwo().getCoach().getCoachTitle() + "                |" + game.getTeamTwo().getCoach().getCoach().getName() + "         |");
-        System.out.println("|" + printPlayerNumber("One", game) + "            |" + printPlayerName("One", game) + "             |    |       |    |" + printPlayerNumberTwo("One", game) + "                   |" + printPlayerNameTwo("One", game) + "         |");
-        System.out.println("|" + printPlayerNumber("Two", game) + "            |" + printPlayerName("Two", game) + "              |    |       |    |" + printPlayerNumberTwo("Two", game) + "                   |" + printPlayerNameTwo("Two", game) + "          |");
-        System.out.println("|" + printPlayerNumber("Three", game) + "            |" + printPlayerName("Three", game) + "             |    |       |    |" + printPlayerNumberTwo("Three", game) + "                   |" + printPlayerNameTwo("Three", game) + "         |");
-        System.out.println("|" + printPlayerNumber("Four", game) + "            |" + printPlayerName("Four", game) + "          |    |       |    |" + printPlayerNumberTwo("Four", game) + "                   |" + printPlayerNameTwo("Four", game) + "      |");
-        System.out.println("|" + printPlayerNumber("Five", game) + "            |" + printPlayerName("Five", game) + "              |    |       |    |" + printPlayerNumberTwo("Five", game) + "                    |" + printPlayerNameTwo("Five", game) + "          |");
-        System.out.println("|------------------------------------------------------------------------------------------------------|");
+    public void printGameInformationEasier (Game game) {
+        int [] teamOne = {PlayerNumber("One", game),PlayerNumber("Two", game), PlayerNumber("Three", game), PlayerNumber("Four", game),PlayerNumber("Five", game)};
+        int [] teamTwo = {PlayerNumberTwo("One", game),PlayerNumberTwo("Two", game), PlayerNumberTwo("Three", game),PlayerNumberTwo("Four", game),PlayerNumberTwo("Five", game)};
+        String [] teamOneNames = {PlayerName("One", game),PlayerName("Two", game),PlayerName("Three", game), PlayerName("Four", game),PlayerName("Five", game) };
+        String [] teamTwoNames = {PlayerNameTwo("One", game),PlayerNameTwo("Two", game),PlayerNameTwo("Three", game), PlayerNameTwo("Four", game),PlayerNameTwo("Five", game) };
+        System.out.println("|" + fixedLengthString(game.getTeamOne().getTeamName(),22) + fixedLengthString("|",23) + "|    | " + game.getTeamOneScore() + ":"
+                            + game.getTeamTwoScore() + " |    | " + fixedLengthString(game.getTeamTwo().getTeamName(),22) + fixedLengthString(" |",23) + "|");
+        System.out.println("|----------------------|----------------------|----|-------|----|------------------------|---------------------|");
+        System.out.println("|" + fixedLengthString(game.getTeamOne().getCoach().getCoachTitle(),22) + "|" + fixedLengthString(game.getTeamOne().getCoach().getCoach().getName(),22) + "|    |       |    |"
+                + fixedLengthString(game.getTeamTwo().getCoach().getCoachTitle(),24) + "|" + fixedLengthString(game.getTeamTwo().getCoach().getCoach().getName(),21) + "|");
+        for (int i = 0; i < teamOne.length; i++) {
+            System.out.println("|"+fixedLengthString(String.valueOf(teamOne[i]),22)+"|" + fixedLengthString(teamOneNames[i],22)+"|    |       |    |"
+                    + fixedLengthString(String.valueOf(teamTwo[i]),24)+"|"+fixedLengthString(teamTwoNames[i], 21)+"|");
+        }
+        System.out.println("|----------------------|----------------------|----|-------|----|------------------------|---------------------|");
         System.out.println("Match started at: " + game.getGameTime().format(myFormatObj));
+
     }
 
-
-    public String printPlayerNameTwo(String player, Game game) {
+    public String PlayerNameTwo(String player, Game game) {
         if (player.equals("One")) {
             return game.getTeamTwo().getPlayerOne().getHuman().getName();
         } else if (player.equals("Two")) {
@@ -138,7 +119,7 @@ public class GameRegister {
         return null;
     }
 
-    public String printPlayerName(String player, Game game) {
+    public String PlayerName(String player, Game game) {
         if (player.equals("One")) {
             return game.getTeamOne().getPlayerOne().getHuman().getName();
         } else if (player.equals("Two")) {
@@ -153,7 +134,7 @@ public class GameRegister {
         return null;
     }
 
-    public int printPlayerNumber(String player, Game game) {
+    public int PlayerNumber(String player, Game game) {
         if (player.equals("One")) {
             return game.getTeamOne().getPlayerOne().getPlayerNumber();
         } else if (player.equals("Two")) {
@@ -168,7 +149,7 @@ public class GameRegister {
         return -1;
     }
 
-    public int printPlayerNumberTwo(String player, Game game) {
+    public int PlayerNumberTwo(String player, Game game) {
         if (player.equals("One")) {
             return game.getTeamTwo().getPlayerOne().getPlayerNumber();
         } else if (player.equals("Two")) {
@@ -182,6 +163,26 @@ public class GameRegister {
         }
         return -1;
     }
+
+    private void printDate (int i) {
+        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+        System.out.println("********[The match date: " + game.get(i).getGameTime().format(myFormatObj) + "]**********");
+        System.out.println("Team " + game.get(i).getTeamOne().getTeamName() + " vs " + "team " + game.get(i).getTeamTwo().getTeamName());
+    }
+
+
+    private void printDateWithScores (int i) {
+        System.out.println("********[The match date: " + game.get(i).getGameTime().format(myFormatObj) + "]**********");
+        System.out.println("Team " + game.get(i).getTeamOne().getTeamName() + " score (" + game.get(i).getTeamOneScore() + ") vs (" + game.get(i).getTeamTwoScore() + ") team " + game.get(i).getTeamTwo().getTeamName());
+    }
+
+    public static String fixedLengthString(String string, int length) {
+        return String.format("%-" + length + "." + length + "s", string);
+    }
+    public static String lengthOf(String string, int length) {
+        return String.format("%07d" + length + ".", string);
+    }
+
 
 }
 

@@ -39,15 +39,19 @@ public class Main {
 
         Game gameOne = new Game(thunderCats, 62, clevelandCavaliers, 60, LocalDateTime.of(2020, 11, 1, 10, 50));
         Game gameTwo = new Game(thunderCats, 96, clevelandCavaliers, 69, LocalDateTime.of(2020, 11, 10, 11, 55));
-        Game gameThree = new Game(thunderCats, 0, clevelandCavaliers, 0, LocalDateTime.of(2020, 11, 14, 11, 55));
+        Game gameThree = new Game(thunderCats, 0, clevelandCavaliers, 0, LocalDateTime.of(2020, 11, 12, 11, 55));
 
         gameRegister.addGame(gameOne);
         gameRegister.addGame(gameTwo);
         gameRegister.addGame(gameThree);
-        gameRegister.getGamesAtDateTime(new DateTime(2020, 11));
-        gameRegister.printFutureGames();
-        gameRegister.getGamesOfThisWeek();
-        gameRegister.printGameInformation(gameTwo);
+//        gameRegister.getGamesAtDateTime(new DateTime(2020, 11));
+//        gameRegister.printGameRegister();
+//        gameRegister.getGamesOfThisWeek();
+        gameRegister.printGameInformationEasier(gameTwo);
+//        gameRegister.printGameInformation(gameTwo);
+
+
+
 
 
     }
