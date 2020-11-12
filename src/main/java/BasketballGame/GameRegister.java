@@ -86,25 +86,61 @@ public class GameRegister {
     }
 
     public void printGameInformation (Game game) {
-        int [] teamOne = {PlayerNumber("One", game),PlayerNumber("Two", game), PlayerNumber("Three", game), PlayerNumber("Four", game),PlayerNumber("Five", game)};
-        int [] teamTwo = {PlayerNumberTwo("One", game),PlayerNumberTwo("Two", game), PlayerNumberTwo("Three", game),PlayerNumberTwo("Four", game),PlayerNumberTwo("Five", game)};
-        String [] teamOneNames = {PlayerName("One", game),PlayerName("Two", game),PlayerName("Three", game), PlayerName("Four", game),PlayerName("Five", game) };
-        String [] teamTwoNames = {PlayerNameTwo("One", game),PlayerNameTwo("Two", game),PlayerNameTwo("Three", game), PlayerNameTwo("Four", game),PlayerNameTwo("Five", game) };
-        System.out.println("|" + fixedLengthString(game.getTeamOne().getTeamName(),22) + fixedLengthString("|",23) + "|    | " + game.getTeamOneScore() + ":"
-                            + game.getTeamTwoScore() + " |    | " + fixedLengthString(game.getTeamTwo().getTeamName(),22) + fixedLengthString(" |",23) + "|");
-        System.out.println("|----------------------|----------------------|----|-------|----|------------------------|---------------------|");
-        System.out.println("|" + fixedLengthString(game.getTeamOne().getCoach().getCoachTitle(),22) + "|" + fixedLengthString(game.getTeamOne().getCoach().getCoach().getName(),22) + "|    |       |    |"
-                + fixedLengthString(game.getTeamTwo().getCoach().getCoachTitle(),24) + "|" + fixedLengthString(game.getTeamTwo().getCoach().getCoach().getName(),21) + "|");
-        for (int i = 0; i < teamOne.length; i++) {
-            System.out.println("|"+fixedLengthString(String.valueOf(teamOne[i]),22)+"|" + fixedLengthString(teamOneNames[i],22)+"|    |       |    |"
-                    + fixedLengthString(String.valueOf(teamTwo[i]),24)+"|"+fixedLengthString(teamTwoNames[i], 21)+"|");
-        }
-        System.out.println("|----------------------|----------------------|----|-------|----|------------------------|---------------------|");
-        System.out.println("Match started at: " + game.getGameTime().format(myFormatObj));
-
+        topOrBottom(game,"Top");
+        printRow(game);
+        topOrBottom(game,"Bottom");
     }
 
-    public String PlayerNameTwo(String player, Game game) {
+    private String topOrBottom (Game game, String topOrBottom) {
+        if (topOrBottom.equals("Top")) {
+            System.out.println("|" + fixedLengthString(game.getTeamOne().getTeamName(),22) + fixedLengthString("|",23) + "|    | " + game.getTeamOneScore() + ":"
+                    + game.getTeamTwoScore() + " |    | " + fixedLengthString(game.getTeamTwo().getTeamName(),22) + fixedLengthString(" |",23) + "|");
+            System.out.println("|----------------------|----------------------|----|-------|----|------------------------|---------------------|");
+            System.out.println("|" + fixedLengthString("Coach",22) + "|" + fixedLengthString(game.getTeamOne().getCoach().getName(),22) + "|    |       |    |"
+                    + fixedLengthString("Coach",24) + "|" + fixedLengthString(game.getTeamTwo().getCoach().getName(),21) + "|");
+            return " ";
+        } else if (topOrBottom.equals("Bottom")) {
+            System.out.println("|----------------------|----------------------|----|-------|----|------------------------|---------------------|");
+            System.out.println("Match started at: " + game.getGameTime().format(myFormatObj));
+            return "";
+        }
+        return null;
+    }
+
+    private void printRow (Game game) {
+        String [] teamOneNumbers = generateTeamNumbers(game,"TeamOne");
+        String [] teamTwoNumbers = generateTeamNumbers(game,"TeamTwo");
+        String [] teamOneNames = generateTeamNames(game,"TeamOne");
+        String [] teamTwoNames = generateTeamNames(game,"TeamTwo");
+        for (int i = 0; i < teamOneNames.length; i++) {
+            System.out.println("|"+fixedLengthString(teamOneNames[i],22)+"|" + fixedLengthString(teamOneNumbers[i],22)+"|    |       |    |"
+                    + fixedLengthString(teamTwoNames[i],24)+"|"+fixedLengthString(teamTwoNumbers[i], 21)+"|");
+        }
+    }
+
+    private String [] generateTeamNumbers (Game game, String team) {
+        String [] teamOneNames = {PlayerName("One", game),PlayerName("Two", game),PlayerName("Three", game), PlayerName("Four", game),PlayerName("Five", game) };
+        String [] teamTwoNames = {PlayerNameTwo("One", game),PlayerNameTwo("Two", game),PlayerNameTwo("Three", game), PlayerNameTwo("Four", game),PlayerNameTwo("Five", game) };
+        if (team.equals("TeamOne")) {
+            return teamOneNames;
+        } else if (team.equals("TeamTwo")) {
+            return teamTwoNames;
+        }
+        return null;
+    }
+
+    private String [] generateTeamNames (Game game, String team) {
+        String [] teamOne = {PlayerNumber("One", game),PlayerNumber("Two", game), PlayerNumber("Three", game), PlayerNumber("Four", game),PlayerNumber("Five", game)};
+        String [] teamTwo = {PlayerNumberTwo("One", game),PlayerNumberTwo("Two", game), PlayerNumberTwo("Three", game),PlayerNumberTwo("Four", game),PlayerNumberTwo("Five", game)};
+        if (team.equals("TeamOne")) {
+            return teamOne;
+        } else if (team.equals("TeamTwo")) {
+            return teamTwo;
+        }
+        return null;
+    }
+
+    private String PlayerNameTwo(String player, Game game) {
         if (player.equals("One")) {
             return game.getTeamTwo().getPlayerOne().getHuman().getName();
         } else if (player.equals("Two")) {
@@ -119,7 +155,7 @@ public class GameRegister {
         return null;
     }
 
-    public String PlayerName(String player, Game game) {
+    private String PlayerName(String player, Game game) {
         if (player.equals("One")) {
             return game.getTeamOne().getPlayerOne().getHuman().getName();
         } else if (player.equals("Two")) {
@@ -134,34 +170,34 @@ public class GameRegister {
         return null;
     }
 
-    public int PlayerNumber(String player, Game game) {
+    private String PlayerNumber(String player, Game game) {
         if (player.equals("One")) {
-            return game.getTeamOne().getPlayerOne().getPlayerNumber();
+            return String.valueOf(game.getTeamOne().getPlayerOne().getPlayerNumber());
         } else if (player.equals("Two")) {
-            return game.getTeamOne().getPlayerOTwo().getPlayerNumber();
+            return String.valueOf(game.getTeamOne().getPlayerOTwo().getPlayerNumber());
         } else if (player.equals("Three")) {
-            return game.getTeamOne().getPlayerThree().getPlayerNumber();
+            return String.valueOf(game.getTeamOne().getPlayerThree().getPlayerNumber());
         } else if (player.equals("Four")) {
-            return game.getTeamOne().getPlayerFour().getPlayerNumber();
+            return String.valueOf(game.getTeamOne().getPlayerFour().getPlayerNumber());
         } else if (player.equals("Five")) {
-            return game.getTeamOne().getPlayerFive().getPlayerNumber();
+            return String.valueOf(game.getTeamOne().getPlayerFive().getPlayerNumber());
         }
-        return -1;
+        return null;
     }
 
-    public int PlayerNumberTwo(String player, Game game) {
+    private String PlayerNumberTwo(String player, Game game) {
         if (player.equals("One")) {
-            return game.getTeamTwo().getPlayerOne().getPlayerNumber();
+            return String.valueOf(game.getTeamTwo().getPlayerOne().getPlayerNumber());
         } else if (player.equals("Two")) {
-            return game.getTeamTwo().getPlayerOTwo().getPlayerNumber();
+            return String.valueOf(game.getTeamTwo().getPlayerOTwo().getPlayerNumber());
         } else if (player.equals("Three")) {
-            return game.getTeamTwo().getPlayerThree().getPlayerNumber();
+            return String.valueOf(game.getTeamTwo().getPlayerThree().getPlayerNumber());
         } else if (player.equals("Four")) {
-            return game.getTeamTwo().getPlayerFour().getPlayerNumber();
+            return String.valueOf(game.getTeamTwo().getPlayerFour().getPlayerNumber());
         } else if (player.equals("Five")) {
-            return game.getTeamTwo().getPlayerFive().getPlayerNumber();
+            return String.valueOf(game.getTeamTwo().getPlayerFive().getPlayerNumber());
         }
-        return -1;
+        return null;
     }
 
     private void printDate (int i) {
@@ -170,13 +206,12 @@ public class GameRegister {
         System.out.println("Team " + game.get(i).getTeamOne().getTeamName() + " vs " + "team " + game.get(i).getTeamTwo().getTeamName());
     }
 
-
     private void printDateWithScores (int i) {
         System.out.println("********[The match date: " + game.get(i).getGameTime().format(myFormatObj) + "]**********");
         System.out.println("Team " + game.get(i).getTeamOne().getTeamName() + " score (" + game.get(i).getTeamOneScore() + ") vs (" + game.get(i).getTeamTwoScore() + ") team " + game.get(i).getTeamTwo().getTeamName());
     }
 
-    public static String fixedLengthString(String string, int length) {
+    private String fixedLengthString(String string, int length) {
         return String.format("%-" + length + "." + length + "s", string);
     }
 

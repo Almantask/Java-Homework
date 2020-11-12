@@ -2,6 +2,7 @@ package BasketballGame;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,7 +16,6 @@ public class Main {
         Human sabonis = new Human("Andrius Sabonis", LocalDate.of(1990, 8, 19), 30, "Lithuanian");
         Human mahone = new Human("John Mahone", LocalDate.of(1992, 8, 19), 28, "Russia");
         Human brad = new Human("Brad Stevens", LocalDate.of(1972, 8, 19), 48, "Lithuanian");
-        Coach coach = new Coach(edvinas);
 
         Player lebronPlayer = new Player(lebron, 19, "PG");
         Player kobePlayer = new Player(kobe, 25, "SG");
@@ -23,7 +23,6 @@ public class Main {
         Player sabonisPlayer = new Player(sabonis, 15, "SF");
         Player mahonePlayer = new Player(mahone, 29, "SF");
 
-        Coach coach1 = new Coach(brad);
         Player lebronPlayer1 = new Player(lebron, 23, "PG");
         Player kobePlayer1 = new Player(kobe, 88, "SG");
         Player hardenPlayer1 = new Player(harden, 69, "C");
@@ -32,10 +31,10 @@ public class Main {
 
         Team
                 okc =
-                new Team("Oklahoma City Thunder", coach, lebronPlayer, kobePlayer, hardenPlayer, sabonisPlayer, mahonePlayer);
+                new Team("Oklahoma City Thunder", edvinas, lebronPlayer, kobePlayer, hardenPlayer, sabonisPlayer, mahonePlayer);
         Team
                 clevelandCavaliers =
-                new Team("Cleveland cavaliers", coach1, lebronPlayer1, kobePlayer1, hardenPlayer1, sabonisPlayer1, mahonePlayer1);
+                new Team("Cleveland cavaliers", brad, lebronPlayer1, kobePlayer1, hardenPlayer1, sabonisPlayer1, mahonePlayer1);
 
         Game gameOne = new Game(okc, 62, clevelandCavaliers, 60, LocalDateTime.of(2020, 11, 1, 10, 50));
         Game gameTwo = new Game(okc, 96, clevelandCavaliers, 69, LocalDateTime.of(2020, 11, 10, 11, 55));
@@ -44,10 +43,11 @@ public class Main {
         gameRegister.addGame(gameOne);
         gameRegister.addGame(gameTwo);
         gameRegister.addGame(gameThree);
-        gameRegister.getGamesAtDateTime(new DateTime(2020, 11));
-        gameRegister.printGameRegister();
-        gameRegister.getGamesOfThisWeek();
+//        gameRegister.getGamesAtDateTime(new DateTime(2020, 11));
+//        gameRegister.printGameRegister();
+//        gameRegister.getGamesOfThisWeek();
         gameRegister.printGameInformation(gameTwo);
+        System.out.println(Game.getWinner(gameOne));
 
 
 

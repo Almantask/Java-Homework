@@ -3,14 +3,14 @@ package BasketballGame;
 public class Team {
 
     private String teamName;
-    private Coach coach;
+    private Human coach;
     private Player playerOne;
     private Player playerOTwo;
     private Player playerThree;
     private Player playerFour;
     private Player playerFive;
 
-    public Team(String teamName, Coach coach, Player playerOne, Player playerOTwo, Player playerThree, Player playerFour, Player playerFive) {
+    public Team(String teamName, Human coach, Player playerOne, Player playerOTwo, Player playerThree, Player playerFour, Player playerFive) {
         this.teamName = teamName;
         this.coach = coach;
         this.playerOne = playerOne;
@@ -27,7 +27,7 @@ public class Team {
         return teamName;
     }
 
-    public Coach getCoach() {
+    public Human getCoach() {
         return coach;
     }
 

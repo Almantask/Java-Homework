@@ -1,15 +1,17 @@
 package BasketballGame;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Game {
 
-    //    private Team team;
+
     private Team teamOne;
     private Team teamTwo;
     private int teamOneScore;
     private int teamTwoScore;
     private LocalDateTime gameTime;
+
 
     public Game(Team teamOne, int teamOneScore, Team teamTwo, int teamTwoScore, LocalDateTime gameTime) {
         this.teamOne = teamOne;
@@ -20,11 +22,12 @@ public class Game {
     }
 
     public static String getWinner(Game game) {
-        System.out.println("Game time: " + game.getGameTime());
-        if (game.getTeamOneScore() > game.getTeamTwoScore()) {
-            return "The game won team " + game.getTeamOne().getTeamName() + " by " + (game.getTeamOneScore() - game.getTeamTwoScore()) + " points.";
+        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        System.out.println("Game time: " + game.getGameTime().format(myFormatObj));
+        if (game.getTeamOneScore() > game.getTeamTwoScore() ) {
+            return String.valueOf(game.getTeamOne().getTeamName());
         } else if (game.getTeamTwoScore() > game.getTeamOneScore()) {
-            return "The game won team " + game.getTeamTwo().getTeamName() + " by " + (game.getTeamTwoScore() - game.getTeamOneScore()) + " points.";
+            return String.valueOf(game.getTeamTwo().getTeamName());
         } else
             System.out.println("Draw.");
         return "Draw.";
