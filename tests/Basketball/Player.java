@@ -9,8 +9,8 @@ public class Player extends Human {
     private int position;
     private int gameStats;
 
-    public Player(String name, int localDate, int age, String nationality, int playerNumber, int position, int gameStats) {
-        super(name, localDate, age, nationality);
+    public Player(String name, String birthday, int age, String nationality, int playerNumber, int position, int gameStats) {
+        super(name, birthday, age, nationality);
         this.playerNumber = playerNumber;
         this.position = position;
         this.gameStats = gameStats;

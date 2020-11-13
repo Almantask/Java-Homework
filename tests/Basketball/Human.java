@@ -2,11 +2,9 @@ package Basketball;
 //### 0- Human (EASY)
 //Every memeber of a team has a name, birthday, age, nationality.
 
-import java.time.LocalDate;
-
 public class Human {
         private String name;
-        private LocalDate birthday;
+        private String birthday;
         private int age;
         private String nationality;
 
@@ -18,11 +16,11 @@ public class Human {
                 this.name = name;
         }
 
-        public LocalDate getBirthday() {
+        public String getBirthday() {
                 return birthday;
         }
 
-        public void setBirthday(LocalDate birthday) {
+        public void setBirthday(String birthday) {
                 this.birthday = birthday;
         }
 
@@ -42,7 +40,7 @@ public class Human {
                 this.nationality = nationality;
         }
 
-        public Human(String name, LocalDate birthday, int age, String nationality) {
+        public Human(String name, String birthday, int age, String nationality) {
                 this.name = name;
                 this.birthday = birthday;
                 this.age = age;

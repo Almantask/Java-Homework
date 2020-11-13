@@ -17,8 +17,9 @@ public class GameStats {
     private int twoPointShots;
     private int threePointAccuracy;
     private int twoPointAccuracy;
+    private int rebounds;
 
-    public GameStats(int fouls, int threePointScore, int twoPointScore, int threePointShots, int twoPointShots, int threePointAccuracy, int twoPointAccuracy) {
+    public GameStats(int fouls, int threePointScore, int twoPointScore, int threePointShots, int twoPointShots, int threePointAccuracy, int twoPointAccuracy, int rebounds) {
         this.fouls = fouls;
         this.threePointScore = threePointScore;
         this.twoPointScore = twoPointScore;
@@ -26,6 +27,7 @@ public class GameStats {
         this.twoPointShots = twoPointShots;
         this.threePointAccuracy = threePointAccuracy;
         this.twoPointAccuracy = twoPointAccuracy;
+        this.rebounds = rebounds;
     }
 
     public int getFouls() {
@@ -84,6 +86,14 @@ public class GameStats {
         this.twoPointAccuracy = twoPointAccuracy;
     }
 
+    public int getRebounds() {
+        return rebounds;
+    }
+
+    public void setRebounds(int rebounds) {
+        this.rebounds = rebounds;
+    }
+
     @Override
     public String toString() {
         return "GameStats{" +
@@ -94,6 +104,7 @@ public class GameStats {
                 ", twoPointShots=" + twoPointShots +
                 ", threePointAccuracy=" + threePointAccuracy +
                 ", twoPointAccuracy=" + twoPointAccuracy +
+                ", rebounds=" + rebounds +
                 '}';
     }
 }

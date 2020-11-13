@@ -55,7 +55,10 @@ public class GamesRegister {
                 .filter(game -> currentDate.equals(game.getTeamDateTime()))
                 .collect(Collectors.toSet())
                 .toArray(new Game[0]);
+/*### 8- Games this week (MEDIUM)
 
+        In `GamesRegister` add a function
+`Game[] getGamesOfThisWeek()` to get games of this week.*/
 
     }
 
