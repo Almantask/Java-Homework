@@ -13,8 +13,8 @@ Toggle
 - If a car is unlocked, locks the car and blinks car lights and turns on the alarm.
 - If a car is locked, unlocks the car and blinks car lights and turns off the alarm.
 
-Presented with a model of a `car(isLocked, lights)`, `alarm(isOn)`, and a `RemoteAlarmController(car, alarm)`
-You have been put to a task to create such an alarm system and you also need to test it.
+Presented with a model of a `car(lock, unlock, open, close)`, `alarm(getIsOn)`, and a `RemoteCarController(getCar, getAlarm, ...)`
+You have been put to a task to complete such an alarm system and you also need to test it.
 You need to simulate 2 situations, for type A and type B controllers:
 - Opening a locked door rings an alarm. This should call `alarm.Beep()` method.
 - Opening a 
