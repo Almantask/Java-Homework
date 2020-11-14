@@ -12,7 +12,7 @@
 - 10.Variety of homework that the homework assignments would match with what we learned during lecures.
 - 11.Find resources on the internet with guides of how to solve problems step by step.
 - 12.Review best homework live during a lecture, announce whose homework gonna be reviewed in advance.
-- 13.During lectures there should be balanced between OOP work and general problem solving.
+- 13.Lectures should be balanced between OOP work and general problem solving.
 - 14.Add steps in slides about syncing remote and origin repository of GIT or find new branches.
 - 15.Organize meetings only with students to help each other with programming in general.(Only for students)
 - 16.Pair people who understand programming better with people who need little help.
