@@ -5,9 +5,12 @@ public class Car {
     }
 
     public boolean isLocked(){
-        return false;
+        return true;
     }
 
+    public boolean isUnLocked(){
+        return false;
+    }
     public void lock(){
 
     }
