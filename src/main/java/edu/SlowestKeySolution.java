@@ -14,11 +14,11 @@ public class SlowestKeySolution {
     }
 
     private static boolean isCorrectArguments(int[] releaseTimes, String keysPressed) {
-        if (keysPressed == null || keysPressed.isEmpty() || keysPressed.equals("")) {
+        if (keysPressed == null || keysPressed.isEmpty()) {
             return false;
         }
 
-        if (releaseTimes == null || (1 > releaseTimes.length) || (releaseTimes.length > 1001)) {
+        if (releaseTimes == null) {
             return false;
         }
 
@@ -26,23 +26,6 @@ public class SlowestKeySolution {
             return false;
         }
 
-        for (int i = 0; i < keysPressed.length(); i++) {
-            if (96 > keysPressed.charAt(i) || keysPressed.charAt(i) > 123) {
-                return false;
-            }
-        }
-
-        for (int i = 0; i < releaseTimes.length; i++) {
-            if ((releaseTimes[i] < 0) || (releaseTimes[i] >= Math.pow(10, 9))) {
-                return false;
-            }
-        }
-
-        for (int i = 1; i < releaseTimes.length; i++) {
-            if (releaseTimes[i] < releaseTimes[i - 1]) {
-                return false;
-            }
-        }
         return true;
     }
 
