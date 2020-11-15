@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class ThousandSeparatorTest {
 
     @Test
-    void threeNumbersToString() {
+    void nineNumbersToString() {
         int numbers = 123456789;
         ThousandSeparator thousandSeparator = new ThousandSeparator();
 
@@ -16,11 +16,27 @@ class ThousandSeparatorTest {
     }
 
     @Test
+    void threeNumbersToString() {
+        int numbers = 123;
+        ThousandSeparator thousandSeparator = new ThousandSeparator();
+
+        assertEquals("123", thousandSeparator.thousandSeparator(numbers));
+    }
+
+    @Test
+    void fourNumbersToString() {
+        int numbers = 1234;
+        ThousandSeparator thousandSeparator = new ThousandSeparator();
+
+        assertEquals("1,234", thousandSeparator.thousandSeparator(numbers));
+    }
+
+    @Test
     void number_do_not_match_input() {
         int numbers = -1;
         ThousandSeparator thousandSeparator = new ThousandSeparator();
 
-        assertEquals(null, thousandSeparator.thousandSeparator(numbers));
+        assertEquals("", thousandSeparator.thousandSeparator(numbers));
     }
 
 
