@@ -65,3 +65,12 @@ The longest of these was the keypress for 'a' with duration 16.
 - keysPressed contains only lowercase English letters.
 
 
+###Implementation plan
+- If keysPessed String is null or empty, return INVALID;
+- If releaseTimes is null, return INVALID;
+- If releaseTimes is not the same length as keysPressed, return INVALID;
+- Find durations for each key press. Store them in separate array;
+- Find the largest number in durations array. This number is the slowest key press time;
+- Find which keys has this largest numbers, store in separate string;
+- Find which key (as the character) has the largest number acording to ASCII;
+- Return that symbol as a result.
