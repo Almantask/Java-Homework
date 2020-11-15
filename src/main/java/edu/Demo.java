@@ -9,6 +9,6 @@ public class Demo {
         TypeARemoteCarController controllerA = new TypeARemoteCarController(alarm, car, lights);
         TypeBRemoteCarController controllerB = new TypeBRemoteCarController(alarm, car, lights);
 
-        // Make sure the scenarios are simulated below.
+    controllerA.lock();
     }
 }

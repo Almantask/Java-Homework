@@ -3,7 +3,7 @@ package edu;
 // Reads: AlarmSystem is a Beeper.
 // Or better: can beep.
 public class Alarm implements Beeper {
-    private boolean isOn = false;
+    private static boolean isOn = false;
 
     // Needed to be able to test beep method.
     private final ConsoleWriter writer;
@@ -13,12 +13,14 @@ public class Alarm implements Beeper {
     }
 
     public void toggle(){
-
+        this.isOn = !isOn;
     }
 
     @Override
     public void beep() {
-        // but only beep if alarm is on
-        writer.println("BEEP");
+        if (isOn) {
+            writer.println("BEEP");
+        } else
+            return;
     }
 }
