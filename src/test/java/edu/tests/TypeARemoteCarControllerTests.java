@@ -4,6 +4,7 @@ import edu.Alarm;
 import edu.Car;
 import edu.Lights;
 import edu.TypeARemoteCarController;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.mockito.Mockito.*;
@@ -13,6 +14,14 @@ public class TypeARemoteCarControllerTests {
     private Alarm alarm;
     private Lights lights;
     private TypeARemoteCarController controller;
+
+    @BeforeEach
+    public void setupForWorking(){
+        car = mock(Car.class);
+        alarm = mock(Alarm.class);
+        lights = mock(Lights.class);
+        controller = new TypeARemoteCarController(alarm, car, lights);
+    }
 
     @Test
     public void setup(){
@@ -62,7 +71,7 @@ public class TypeARemoteCarControllerTests {
         controller.unlock();
 
         verify(car, never()).lock();
-        verify(lights, never()).blink();
+        verify(lights, atLeastOnce()).blink();
         verify(alarm, never()).toggle();
     }
 }
