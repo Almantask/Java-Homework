@@ -1,6 +1,7 @@
 package edu.tests;
 
 import edu.*;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.mockito.Mockito.*;
@@ -11,7 +12,7 @@ public class TypeBRemoteCarControllerTests {
     private Lights lights;
     private TypeBRemoteCarController controller;
 
-    @Test
+    @BeforeEach
     public void setup(){
         car = mock(Car.class);
         alarm = mock(Alarm.class);
