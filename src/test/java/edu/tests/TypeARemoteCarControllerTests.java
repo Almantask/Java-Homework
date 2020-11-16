@@ -63,7 +63,7 @@ public class TypeARemoteCarControllerTests {
         controller.unlock();
 
         verify(car, never()).lock();
-        verify(lights, atLeastOnce()).blink();
+        verify(lights, never()).blink();
         verify(alarm, never()).toggle();
     }
 }
