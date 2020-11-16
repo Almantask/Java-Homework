@@ -63,3 +63,13 @@ The longest of these was the keypress for 'a' with duration 16.
 - 1 <= releaseTimes[i] <= 109
 - releaseTimes[i] < releaseTimes[i+1]
 - keysPressed contains only lowercase English letters.
+
+### Implementation plan
+1. If keysPressed String is null or empty, return INVALID;
+2. If releaseTimes is null, return INVALID;
+3. If releaseTimes is not the same length as keysPressed, return INVALID;
+4. Find durations for each key press. Store them in separate array;
+5. Find the largest number in durations array. This number is the slowest key press time;
+6. Find which keys in keysPressed String has this largest numbers (longest duration), store them in separate string;
+7. Find which key (as the character) has the largest number according to ASCII;
+8. Return founded character as a result.
