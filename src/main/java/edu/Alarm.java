@@ -8,17 +8,27 @@ public class Alarm implements Beeper {
     // Needed to be able to test beep method.
     private final ConsoleWriter writer;
 
-    public Alarm(ConsoleWriter writer){
+    public Alarm(ConsoleWriter writer) {
         this.writer = writer;
     }
 
-    public void toggle(){
-
+    public void toggle() {
+        if (isOn) {
+            isOn = false;
+        } else {
+            isOn = true;
+        }
     }
 
     @Override
     public void beep() {
         // but only beep if alarm is on
-        writer.println("BEEP");
+        if (isOn) {
+            writer.println("BEEP");
+        }
+    }
+
+    public boolean getIsOn() {
+        return isOn;
     }
 }

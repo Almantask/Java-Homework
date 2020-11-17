@@ -1,22 +1,28 @@
 package edu;
 
 public class Car {
+    private boolean carIsLocked = true;
+    private final Alarm alarm;
+
     public Car(Alarm alarm, Lights lights) {
+        this.alarm = alarm;
     }
 
-    public boolean isLocked(){
-        return false;
+    public boolean isLocked() {
+        return carIsLocked;
     }
 
-    public void lock(){
-
+    public void lock() {
+        carIsLocked = true;
     }
 
-    public void unlock(){
-
+    public void unlock() {
+        carIsLocked = false;
     }
 
-    public void open(){
-
+    public void open() {
+        if (alarm.getIsOn()) {
+            alarm.beep();
+        }
     }
 }

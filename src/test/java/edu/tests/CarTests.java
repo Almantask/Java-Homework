@@ -15,17 +15,17 @@ public class CarTests {
     private Car car;
 
     @BeforeEach
-    public void setup(){
+    public void setup() {
         alarm = mock(Alarm.class);
         lights = mock(Lights.class);
         car = new Car(alarm, lights);
     }
 
     @Test
-    public void open_when_carIsLocked_beeps(){
+    public void open_when_carIsLocked_beeps() {
         // Arrange
         car.lock();
-
+        when(alarm.getIsOn()).thenReturn(true);
         // Act
         car.open();
 
@@ -34,7 +34,7 @@ public class CarTests {
     }
 
     @Test
-    public void open_when_carIsUnlocked_doesNotBeep(){
+    public void open_when_carIsUnlocked_doesNotBeep() {
         // Arrange
         car.unlock();
 
@@ -46,14 +46,14 @@ public class CarTests {
     }
 
     @Test
-    public void lock_setsIsLocked_toTrue(){
+    public void lock_setsIsLocked_toTrue() {
         car.lock();
 
         assertThat(car.isLocked()).isEqualTo(true);
     }
 
     @Test
-    public void unlock_setsIsLocked_toFalse(){
+    public void unlock_setsIsLocked_toFalse() {
         car.unlock();
 
         assertThat(car.isLocked()).isEqualTo(false);

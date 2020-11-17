@@ -13,7 +13,7 @@ public class TypeBRemoteCarControllerTests {
     private TypeBRemoteCarController controller;
 
     @BeforeEach
-    public void setup(){
+    public void setup() {
         car = mock(Car.class);
         alarm = mock(Alarm.class);
         lights = mock(Lights.class);
@@ -21,23 +21,24 @@ public class TypeBRemoteCarControllerTests {
     }
 
     @Test
-    public void toggle_when_carUnlocked_locks(){
+    public void toggle_when_carUnlocked_locks() {
         when(car.isLocked()).thenReturn(false);
 
         controller.toggle();
 
-        verify(car, times(1)).lock();
+        verify(car, times(1)).unlock();
         verify(lights, atLeastOnce()).blink();
         verify(alarm, times(1)).toggle();
     }
 
     @Test
-    public void toggle_when_carLocked_unlocks(){
+    public void toggle_when_carLocked_unlocks() {
         when(car.isLocked()).thenReturn(true);
+        when(alarm.getIsOn()).thenReturn(true);
 
         controller.toggle();
 
-        verify(car, times(1)).unlock();
+        verify(car, times(1)).lock();
         verify(lights, atLeastOnce()).blink();
         verify(alarm, times(1)).toggle();
     }

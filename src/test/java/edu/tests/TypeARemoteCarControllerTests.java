@@ -16,7 +16,7 @@ public class TypeARemoteCarControllerTests {
     private TypeARemoteCarController controller;
 
     @BeforeEach
-    public void setup(){
+    public void setup() {
         car = mock(Car.class);
         alarm = mock(Alarm.class);
         lights = mock(Lights.class);
@@ -24,7 +24,7 @@ public class TypeARemoteCarControllerTests {
     }
 
     @Test
-    public void lock_when_carUnlocked_locks(){
+    public void lock_when_carUnlocked_locks() {
         when(car.isLocked()).thenReturn(false);
 
         controller.lock();
@@ -35,8 +35,9 @@ public class TypeARemoteCarControllerTests {
     }
 
     @Test
-    public void lock_when_carLocked_blinksLights(){
+    public void lock_when_carLocked_blinksLights() {
         when(car.isLocked()).thenReturn(true);
+        when(alarm.getIsOn()).thenReturn(true);
 
         controller.lock();
 
@@ -46,9 +47,9 @@ public class TypeARemoteCarControllerTests {
     }
 
     @Test
-    public void unlock_when_carLocked_unlocks(){
+    public void unlock_when_carLocked_unlocks() {
         when(car.isLocked()).thenReturn(true);
-
+        when(alarm.getIsOn()).thenReturn(true);
         controller.unlock();
 
         verify(car, times(1)).unlock();
@@ -57,7 +58,7 @@ public class TypeARemoteCarControllerTests {
     }
 
     @Test
-    public void unlock_when_unlocked_doesNothing(){
+    public void unlock_when_unlocked_doesNothing() {
         when(car.isLocked()).thenReturn(false);
 
         controller.unlock();
