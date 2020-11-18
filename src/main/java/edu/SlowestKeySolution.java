@@ -21,7 +21,7 @@ public class SlowestKeySolution {
         ArrayList<Integer> duplicatingIndexes = findDuplications(durations);
 
         if(duplicatingIndexes.size() > 0) {
-            longestPressedCharacter = keysPressed.charAt(duplicatingIndexes.get(duplicatingIndexes.size()-1));
+            longestPressedCharacter = keysPressed.charAt(duplicatingIndexes.get(0));
         } else {
             for(int i=0;i<durations.length;i++){
                 if(durations[i] == getHighest(durations))
