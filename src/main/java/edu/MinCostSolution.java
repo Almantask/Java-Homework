@@ -5,7 +5,7 @@ public class MinCostSolution {
     public static final char INVALID = '-';
 
     public static int solve(String key, int[] numbers ) {
-        if (numbers == null || numbers == null || key.isEmpty() || numbers.length != key.length() ) {
+        if (numbers == null || key == null || key.isEmpty() || numbers.length != key.length() ) {
             return INVALID;
         }
         int trackedNumbers = numbers[0];
