@@ -56,6 +56,6 @@ public class CarTests {
     public void unlock_setsIsLocked_toFalse(){
         car.unlock();
 
-        assertThat(car.isUnLocked()).isEqualTo(false);
+        assertThat(car.isLocked()).isEqualTo(false);
     }
 }
