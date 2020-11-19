@@ -28,7 +28,10 @@ public class SlowestKeySolution {
         System.out.println(Arrays.toString(durations));
         ch = order(durations, ch);
         System.out.println(Arrays.toString(ch) + "2)");
+        System.out.println(Arrays.toString(durations) + "3)");
+        System.out.println((int) ch[0]);
         answer = orderLetters(durations, ch);
+        System.out.println((int) ch[0]);
         System.out.println(answer);
         return answer;
     }
@@ -75,28 +78,49 @@ public class SlowestKeySolution {
         return ch;
     }
 
+
     public static char orderLetters(int[] durations, char[] ch) {
-        char tempChar2 ;
-        System.out.println(ch);
-        for (
-                int l = 0; (durations[l] == (durations[l + 1])); l++) {
-            for (int k = 1; (durations[k] == (durations[k + 1])); k++) {
-                int e = ch[l];
-                System.out.println(e);
-                int c = ch[k];
-                System.out.println(c);
-                if (e < c) {
-                    tempChar2 = ch[l];
-                    ch[l] = ch[k];
-                    ch[k] = tempChar2;
+        int i;
+        char tempChar2;
+        int max = durations[0];
+        for (i = 1; i < durations.length; i++)
+            if (durations[i] > max)
+                max = durations[i];
+        System.out.println(ch.length);
+        if (ch.length == 1) {
+            return ch[0];
+        } else if (ch.length == 2 && !(durations[0] == (durations[1]))) {
+            return ch[0];
+        } else if (ch.length == 2) {
+            int e = ch[0];
+            System.out.println(e + "a");
+            int c = ch[1];
+            System.out.println(c + "b");
+            if (e < c) {
+                return ch[1];
+            }
+        } else {
+            for (int l = 0; durations[l] == max; l++) {
+                for (int k = 1; durations[k] == max; k++) {
+                    int e = ch[l];
+                    System.out.println(ch[l]);
+                    int c = ch[k];
+                    System.out.println(ch[k]);
+                    if (e < c) {
+                        tempChar2 = ch[l];
+
+                        ch[l] = ch[k];
+                        ch[k] = tempChar2;
+                    }
                 }
             }
         }
-        System.out.println(Arrays.toString(durations));
-        System.out.print(ch[0]);
+        System.out.println(ch[0]);
         return ch[0];
     }
 }
+
+
 
 
 
