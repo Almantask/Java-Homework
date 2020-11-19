@@ -6,6 +6,5 @@ public class Demo {
         System.out.printf("%,d\n", 687467);
         System.out.printf("%,.2f\n", 7546.21);
         System.out.printf("%,.2f\n", 463758.787);
-        System.out.printf("%,.2f", 123456.5);
     }
 }
