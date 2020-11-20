@@ -25,10 +25,10 @@ public class TypeBRemoteCarControllerTests {
         when(car.isLocked()).thenReturn(false);
 
      controller.toggle();
-//
-//        verify(car, times(1)).lock();
-//        verify(lights, atLeastOnce()).blink();
-//        verify(alarm, times(1)).toggle();
+
+       verify(car, times(1)).lock();
+        verify(lights, atLeastOnce()).blink();
+       verify(alarm, times(1)).toggle();
     }
 
     @Test

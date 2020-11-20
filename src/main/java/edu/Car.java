@@ -8,28 +8,34 @@ public class Car {
 
     public Car(Alarm alarm, Lights lights) {
         this.alarm = alarm;
-        this.lights  = lights;
+        this.lights = lights;
     }
 
-    public boolean isLocked(){
+    public boolean isLocked() {
         return isLocked;
     }
 
 
-    public void lock(){
+    public void lock() {
         this.isLocked = true;
-
+//        if(!isLocked){
+//            isLocked = true;
     }
 
-    public void unlock(){
+
+    public void unlock() {
         this.isLocked = false;
 
-    }
+       // if (isLocked) {
+            //isLocked = true;
 
-    public void open(){
-        if(isLocked){
-            alarm.beep();
         }
 
+        public void open () {
+            if (isLocked) {
+                alarm.beep();
+            }
+
+        }
     }
-}
+
