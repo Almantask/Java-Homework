@@ -10,11 +10,11 @@ public class MinCostSolution {
     }
 
     private static boolean validate(String s, int[] cost) {
-        if(!s.matches("[a-z]+") || s.length() <= 1 || cost.length > (10^5) )
+        if(!s.matches("[a-z]+") || s.length() <= 1 || cost.length > Math.pow(10, 5) )
             return false;
 
         for(int i=0;i< cost.length;i++) {
-            if(cost[i] < 1 || cost[i] > (10^4))
+            if(cost[i] < 1 || cost[i] > Math.pow(10, 4))
                 return false;
         }
         return true;
