@@ -1,4 +1,4 @@
-package edu;
+package edu.encapsulation;
 
 // This class demonstrates encapsulation
 // We hid the internal ProgressBar details

@@ -1,4 +1,4 @@
-package edu;
+package edu.inheritanceAndPolymorphism;
 
 public class Human {
     private final String name;
@@ -29,5 +29,18 @@ public class Human {
 
     public void setWeight(float weight) {
         this.weight = weight;
+    }
+
+    public void whoAmI(){
+        System.out.println("Human");
+    }
+
+    @Override
+    public String toString() {
+        return "Human{" +
+                "name='" + name + '\'' +
+                ", height=" + height +
+                ", weight=" + weight +
+                '}';
     }
 }

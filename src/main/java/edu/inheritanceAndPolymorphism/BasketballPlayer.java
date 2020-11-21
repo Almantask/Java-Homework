@@ -1,4 +1,4 @@
-package edu;
+package edu.inheritanceAndPolymorphism;
 
 // It's hard to design inheritance so that:
 // 1- we get only what we need

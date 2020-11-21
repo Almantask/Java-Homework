@@ -1,4 +1,4 @@
-package edu;
+package edu.inheritanceAndPolymorphism;
 
 public class FootBallPlayer extends Player{
     private float attempts;
