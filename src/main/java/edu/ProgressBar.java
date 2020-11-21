@@ -42,7 +42,7 @@ public class ProgressBar {
         float tenPercent = max * 0.1f;
         int stars = (int)(currentProgress / tenPercent);
         for (int i = 0; i < stars; i++) {
-            progress +="*";
+            progress +="#";
         }
 
         return progress;
