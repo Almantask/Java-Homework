@@ -1,4 +1,4 @@
-package edu;
+package edu.inheritanceAndPolymorphism;
 
 public class Coach {
     private final String name;

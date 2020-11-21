@@ -1,4 +1,4 @@
-package edu;
+package edu.inheritanceAndPolymorphism;
 
 // This demonstrates inheritance
 // Inheritance forms an "is-a" relationship
@@ -36,5 +36,18 @@ public class Player extends Human{
 
     public void setGamesWon(int gamesWon) {
         this.gamesWon = gamesWon;
+    }
+
+    public void whoAmI(){
+        System.out.println("Player");
+    }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "team='" + team + '\'' +
+                ", gamesPlayed=" + gamesPlayed +
+                ", gamesWon=" + gamesWon +
+                '}';
     }
 }
