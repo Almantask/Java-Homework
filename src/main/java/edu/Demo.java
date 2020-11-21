@@ -22,35 +22,68 @@ public class Demo {
 
 
     private static void demoUser(){
-        Person person4 = new Person("Arnoldas", 220, 120, 125846L);
-//        String User = getUser(2145);
-//        System.out.println(User);
-        PersonRegister register1 = BuildPersonRegister();
-        register1.add(person4);
-        Person person5 = register1.get(333845L);
-        System.out.println(person5);
+//        Person person4 = new Person("Arnoldas", 220, 120, 125846L);
+////        String User = getUser(2145);
+////        System.out.println(User);
+//        PersonRegister register1 = BuildPersonRegister();
+//        register1.add(person4);
+//        Person person5 = register1.get(333845L);
+//        System.out.println(person5);
+
+
+
+
+//item demoUser
+        Item item4 = new Item("Samsung",750);
+       itemRegister register1 = BuildItemRegister();
+        register1.add(item4);
+        Item item5 = register1.get(350L);
+        System.out.println(item5);
+
+
+
 
     }
-
-    private static PersonRegister BuildPersonRegister() {
-        Person person1 = new Person("Marius", 175,46,123456L);
-        Person person2 = new Person("Jonas", 181, 68, 123845L);
-        Person person3 = new Person("Jonas2", 185, 78, 333845L);
-        Person[]persons = {person1,person2,person3};
-        PersonRegister register1 = new PersonRegister(persons);
+    private static itemRegister BuildItemRegister() {
+        Item item1 = new Item("Huawei", 550);
+        Item item2 = new Item("Nokia", 450);
+        Item item3 = new Item("Xiomi", 350);
+        Item[]items = {item1,item2,item3};
+        itemRegister register1 = new itemRegister(items);
         return register1;
+
+
+
+
+//    private static PersonRegister BuildPersonRegister() {
+//        Person person1 = new Person("Marius", 175,46,123456L);
+//        Person person2 = new Person("Jonas", 181, 68, 123845L);
+//        Person person3 = new Person("Jonas2", 185, 78, 333845L);
+//        Person[]persons = {person1,person2,person3};
+//        PersonRegister register1 = new PersonRegister(persons);
+//        return register1;
+    }
+    private static String getPhone(int price){
+
+        Map<Integer,String>gadget = new HashMap<>();
+        gadget.put(150, "Siemes");
+        gadget.put(200, "Ericson");
+
+        String Phone = gadget.get(price);
+
+        return Phone;
     }
 
-    private static String getUser(int ID){
-
-        Map<Integer,String>people = new HashMap<>();
-        people.put(2145, "Antanas");
-        people.put(1145, "Marius");
-
-        String User = people.get(ID);
-
-        return User;
-    }
+//    private static String getUser(int ID){
+//
+//        Map<Integer,String>people = new HashMap<>();
+//        people.put(2145, "Antanas");
+//        people.put(1145, "Marius");
+//
+//        String User = people.get(ID);
+//
+//        return User;
+//    }
 
     private static void demoProcess(){
         SomeProcess process1 = new Process1();
