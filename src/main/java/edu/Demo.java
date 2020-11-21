@@ -8,13 +8,79 @@ import edu.inheritanceAndPolymorphism.Human;
 import edu.inheritanceAndPolymorphism.Player;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Demo {
     public static void main(String[] args) throws IOException {
-        //demoProgressBar();
-        //demoFlyers();
-        demoPlayer();
+        demoDictionary();
+        //demoProcess();
     }
+
+    private static void demoProcess(){
+        SomeProcess process1 = new Process1();
+        SomeProcess process2 = new Process2();
+
+        process1.execute();
+        process2.execute();
+    }
+
+    private static void demoDictionary(){
+        String translation = translateGood("iki");
+        System.out.println(translation);
+    }
+
+    private static String translateGood(String word) {
+        Map<String, String> dictionaryLtToEn = new HashMap<>();
+        dictionaryLtToEn.put("labas", "hello");
+        dictionaryLtToEn.put("iki", "bye");
+        dictionaryLtToEn.put("iki", "bye2");
+
+        // If we used array instead
+        // We would need two array
+        // we would also need a foreach loop
+        // because a search needs to be made
+
+        // With maps, we can immediately retrieve the value by key.
+        String translation = dictionaryLtToEn.get(word);
+
+        return translation;
+    }
+
+    private static void demoList() {
+        String[] words = new String[0];
+        // Add 1 add the end of array
+        words = new String[words.length+1];
+        words[words.length-1] = "hello";
+        // Adding a second time I would need to copy the original array
+        // Expand the old array
+        // And add value in the end.
+
+        List<String> words2 = new ArrayList<>();
+        words2.add("hello");
+        words2.add("labas111");
+        words2.add("hello");
+        words2.add("labas111");
+        words2.add("hello");
+        words2.add("labas111");
+        words2.add("hello");
+        words2.clear();
+        for (String word : words2){
+            System.out.println(word);
+        }
+
+        // Instead of an int I have to write an object
+        // Primitives don't work
+        ArrayList<Integer> numbers = new ArrayList<>();
+        numbers.add(1);
+        numbers.add(54);
+        for (int number : numbers){
+            System.out.println(number);
+        }
+    }
+
 
 // Without an interface I would have to do this:
 //    public void PrintId(Plane plane){
