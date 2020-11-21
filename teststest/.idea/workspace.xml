@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:Examples" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:chapter1" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:chapter1" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:examples" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:chapter1" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:homework" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:chapter2" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:chapter2" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:classroom" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:chapter2" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:examples" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:tests" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:myself" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:myself" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:adventofcode" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:myself" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:chapter1" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:myself" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:chapter1" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:homework" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:Examples" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:chapter1" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:chapter1" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:examples" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:chapter1" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:homework" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:chapter2" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:chapter2" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:classroom" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:chapter2" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:examples" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:demo" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9343c7cf-dd98-4726-bca4-b112a217cbb1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/teststest.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1kJqumpeO7knCaDJ7FYUdFr8ile" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="edu" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn compile" />
+      <command value="mvn package" />
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.CalculatorTest.test1">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="edu.Main" />
+      <module name="teststest" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CalculatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="teststest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu" />
+      <option name="MAIN_CLASS_NAME" value="edu.CalculatorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CalculatorTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="teststest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu" />
+      <option name="MAIN_CLASS_NAME" value="edu.CalculatorTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CalculatorTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="teststest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu" />
+      <option name="MAIN_CLASS_NAME" value="edu.CalculatorTest" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CalculatorTest.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="teststest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu" />
+      <option name="MAIN_CLASS_NAME" value="edu.CalculatorTest" />
+      <option name="METHOD_NAME" value="test2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.CalculatorTest" />
+      <item itemvalue="JUnit.CalculatorTest.test1" />
+      <item itemvalue="JUnit.CalculatorTest.test2" />
+      <item itemvalue="JUnit.CalculatorTest.test" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CalculatorTest.test1" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.CalculatorTest" />
+        <item itemvalue="JUnit.CalculatorTest.test2" />
+        <item itemvalue="JUnit.CalculatorTest.test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9343c7cf-dd98-4726-bca4-b112a217cbb1" name="Default Changelist" comment="" />
+      <created>1605429266621</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1605429266621</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="684" y="209" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1605429343856">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="684" y="209" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/-1920.744.1920.1000/0.0.1920.1040@0.0.1920.1040" timestamp="1605429343856" />
+    <state x="744" y="389" width="431" height="266" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1605429924202">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="744" y="389" width="431" height="266" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/-1920.744.1920.1000/0.0.1920.1040@0.0.1920.1040" timestamp="1605429924202" />
+    <state width="1878" height="274" key="GridCell.Tab.0.bottom" timestamp="1605433494630">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1878" height="274" key="GridCell.Tab.0.bottom/-1920.744.1920.1000/0.0.1920.1040@0.0.1920.1040" timestamp="1605433494630" />
+    <state width="1878" height="274" key="GridCell.Tab.0.center" timestamp="1605433494630">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1878" height="274" key="GridCell.Tab.0.center/-1920.744.1920.1000/0.0.1920.1040@0.0.1920.1040" timestamp="1605433494630" />
+    <state width="1878" height="274" key="GridCell.Tab.0.left" timestamp="1605433494630">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1878" height="274" key="GridCell.Tab.0.left/-1920.744.1920.1000/0.0.1920.1040@0.0.1920.1040" timestamp="1605433494630" />
+    <state width="1878" height="274" key="GridCell.Tab.0.right" timestamp="1605433494630">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1878" height="274" key="GridCell.Tab.0.right/-1920.744.1920.1000/0.0.1920.1040@0.0.1920.1040" timestamp="1605433494630" />
+    <state x="775" y="298" key="chooseDestDirectoryDialog" timestamp="1605429905416">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="775" y="298" key="chooseDestDirectoryDialog/-1920.744.1920.1000/0.0.1920.1040@0.0.1920.1040" timestamp="1605429905416" />
+    <state x="385" y="141" key="new project wizard" timestamp="1605429640642">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="385" y="141" key="new project wizard/-1920.744.1920.1000/0.0.1920.1040@0.0.1920.1040" timestamp="1605429640642" />
+    <state x="624" y="247" width="672" height="677" key="run.anything.popup" timestamp="1605430424640">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="624" y="247" width="672" height="677" key="run.anything.popup/-1920.744.1920.1000/0.0.1920.1040@0.0.1920.1040" timestamp="1605430424640" />
+  </component>
+</project>
