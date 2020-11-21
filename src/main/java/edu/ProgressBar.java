@@ -11,17 +11,23 @@ public class ProgressBar {
     private float max;
 
     public ProgressBar(float currentProgress, float max) {
-        if(currentProgress >= 0){
+        if (currentProgress > max) {
+            this.currentProgress = max;
+        } else if(currentProgress >= 0){
             this.currentProgress = currentProgress;
         }
         if(max > 0){
             this.max = max;
-        }
-        else{
+        } else {
             // default max
             this.max = 100;
         }
+
     }
+
+    // add negative or zero - does nothing
+    // add plus positive - less than max or more tha max
+    //
 
     public void addProgress(float increment){
         if(increment < 0) return;
