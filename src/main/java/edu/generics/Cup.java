@@ -8,9 +8,24 @@ package edu.generics;
 // other than a yucky validation if we wanted to only have
 // the same type of liquid inside.
 public class Cup {
-    // capacity
-    // current
+    private final float capacity;
+    private float current;
 
-    // add fill method
+    public Cup(float capacity, float current) {
+        this.capacity = capacity;
+        this.current = current;
+    }
+
+    public void add(Liquid liquid){
+        current += liquid.getAmount();
+        if(current > capacity){
+            current = capacity;
+        }
+    }
+
+    public boolean isFull(){
+        final float TOLERANCE = 0.001f;
+        return Math.abs(capacity - current) < TOLERANCE;
+    }
     // add isFullMethod
 }
