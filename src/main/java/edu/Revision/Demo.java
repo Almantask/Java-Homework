@@ -1,7 +1,31 @@
 package edu.Revision;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class Demo {
     public static void run(){
+
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+
+        // Map
+        Map<Integer, Integer> map = new HashMap<>();
+        map.put(10011, 1);
+        // Very fast
+        int element = map.get(10011);
+
+        Map<String, Student> studentsMap = new HashMap<>();
+        studentsMap.put("tomas", new UniversityStudent("tomas"));
+
+        // Array
+        int[] arrayLikeMap = new int[10012];
+        arrayLikeMap[10011] = 1;
+        // Very fast
+        int element2 = arrayLikeMap[10011];
+
         Child child1 = new Child();
         Parent parent1 = new Parent();
         Child child2 = new Child();
