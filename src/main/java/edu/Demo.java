@@ -1,5 +1,6 @@
 package edu;
 
+import edu.errors.InvalidTransferException;
 import edu.protectedkeywordAndEnum.Gender;
 import edu.protectedkeywordAndEnum.Human;
 import edu.protectedkeywordAndEnum.Teacher;
@@ -7,7 +8,7 @@ import edu.protectedkeywordAndEnum.Teacher;
 import java.io.IOException;
 
 public class Demo {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InvalidTransferException {
         edu.errors.Demo.run();
         edu.generics.Demo.run();
         edu.protectedkeywordAndEnum.Demo.run();
