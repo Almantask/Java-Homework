@@ -18,5 +18,8 @@ public class Demo {
         //Human human = new Teacher("ka", Gender.FEMALE);
         // not ok
         // human.name = "";
+        Car newCar = new Car("BMW", "X5", FuelType.PETROL);
+
+        System.out.println(newCar.toString());
     }
 }
