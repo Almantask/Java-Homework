@@ -9,6 +9,11 @@ import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
 
+// Json is the most common data format for files
+// It is used all around the web
+// Also often used for configurations and data in general
+// It's so good, because it's very lightweight
+// newer
 public class JsonExamples {
 
     public static void demoWithDates(){
