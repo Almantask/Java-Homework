@@ -13,6 +13,9 @@ public class Demo {
 
 
         System.out.println("------Demo protectedkeywordAndEnum------");
+
+        Car car1 = new Car("BMW","X5", FuelType.PETROL);
+        System.out.println(car1.toString());
     }
 
     private static void demoConversion() {
@@ -29,4 +32,6 @@ public class Demo {
         }
         System.out.println("===========================");
     }
+
+
 }
