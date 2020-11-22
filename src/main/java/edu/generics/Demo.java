@@ -16,7 +16,7 @@ public class Demo {
         Map<Integer, Integer> map = new HashMap<>();
         map.put(10011, 1);
         // Very fast
-        int element = map.get(1001);
+        int element = map.get(10011);
 
         Map<String, Student> studentsMap = new HashMap<>();
         studentsMap.put("tomas", new UniversityStudent("tomas"));
