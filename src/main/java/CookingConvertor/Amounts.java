@@ -18,6 +18,7 @@ public enum Amounts {
 
     Amounts(float number, String unitName) {
         this.number = number;
+        this.unitName = unitName;
     }
 
     public float getNumber() {
@@ -55,42 +56,20 @@ public enum Amounts {
         }
     }
 
-    public static float switching(CookingConvertor.CookingMeasurement originalMeasurement, String unit) {
-        float newAmount = 0;
-        switch (unit.toUpperCase()) {
-            case "TSP":
-                newAmount = (value(originalMeasurement.getUnit()) / TSP.getNumber()) * originalMeasurement.getAmount();
-                break;
-            case "OZ":
-                newAmount = (value(originalMeasurement.getUnit()) / OZ.getNumber()) * originalMeasurement.getAmount();
-                break;
-            case "POUND":
-                newAmount = (value(originalMeasurement.getUnit()) / POUND.getNumber()) * originalMeasurement.getAmount();
-                break;
-            case "QUART":
-                newAmount = (value(originalMeasurement.getUnit()) / QUART.getNumber()) * originalMeasurement.getAmount();
-                break;
-            case "GALLON":
-                newAmount = (value(originalMeasurement.getUnit()) / GALLON.getNumber()) * originalMeasurement.getAmount();
-                break;
-            case "PINT":
-                newAmount = (value(originalMeasurement.getUnit()) / PINT.getNumber()) * originalMeasurement.getAmount();
-                break;
-            case "CUP":
-                newAmount = (value(originalMeasurement.getUnit()) / CUP.getNumber()) * originalMeasurement.getAmount();
-                break;
-            case "FL_OUNCE":
-                newAmount = (value(originalMeasurement.getUnit()) / FL_OUNCE.getNumber()) * originalMeasurement.getAmount();
-                break;
-            case "TBSP":
-                newAmount = (value(originalMeasurement.getUnit()) / TBSP.getNumber()) * originalMeasurement.getAmount();
-                break;
-            case "ML":
-                newAmount = (value(originalMeasurement.getUnit()) / ML.getNumber()) * originalMeasurement.getAmount();
-                break;
-            default:
-                System.out.println("Enter again");
-        }
+    public static float convertNumber(CookingConvertor.CookingMeasurement originalMeasurement, String unit) {
+        float newAmount = (value(originalMeasurement.getUnit()) / value(unit)) * originalMeasurement.getAmount();
         return newAmount;
+    }
+
+    public static String[] values = {OZ.getUnitName(),POUND.getUnitName(),PINT.getUnitName(),GALLON.getUnitName(),
+            QUART.getUnitName(),CUP.getUnitName(),FL_OUNCE.getUnitName(),TSP.getUnitName(),TBSP.getUnitName(),ML.getUnitName()};
+
+    public static boolean isValid (String input) {
+        for (String value : values) {
+            if (input.toUpperCase().equals(value)) {
+                return false;
+            }
+        }
+        return true;
     }
 }

@@ -5,7 +5,8 @@ public class Cooking {
 
     public static void main(String[] args) {
         ReceipePrompt prompt = new ReceipePrompt();
-        prompt.run();
+//        prompt.run();
+        prompt.recipeFromStringConverter();
     }
 
     public static class Units {
@@ -25,7 +26,7 @@ public class Cooking {
 
         public static boolean isValid (String input) {
             for (String value : values) {
-                if (input.toUpperCase().equals(value)) {
+                if (input.toUpperCase().equals(value.toUpperCase())) {
                     return false;
                 }
             }

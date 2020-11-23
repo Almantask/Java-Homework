@@ -40,19 +40,17 @@ public class ReceipePrompt {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter ingredient, amount and unit: ");
         String input = scanner.nextLine();
-
+//        String input = "Sugar 10 ml Cheese 20 tsp";
         String [] measurements = input.split(" ");
-
         for (int i = 0; i < measurements.length; i++) {
             if (checkIfANumber(measurements[i])) {
                 float number = Float.parseFloat(measurements[i++]);
-
-                if (Cooking.Units.isValid(measurements[i])) {
+                if (!Cooking.Units.isValid(measurements[i])) {
                     CookingMeasurement calculated = CookingMeasurementConverter.convert(new CookingMeasurement(number, measurements[i].toUpperCase()), "ML");
                     System.out.println(" Amount: " + calculated.getAmount() + " ML");
                 }
             }
-            if (!checkIfANumber(measurements[i]) && !Cooking.Units.isValid(measurements[i])) {
+            if (!checkIfANumber(measurements[i]) && Cooking.Units.isValid(measurements[i])) {
                 String component = measurements[i];
                 System.out.println(component);
             }
