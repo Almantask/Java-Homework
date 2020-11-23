@@ -18,7 +18,6 @@ public enum Amounts {
 
     Amounts(float number, String unitName) {
         this.number = number;
-        this.unitName = unitName;
     }
 
     public float getNumber() {
@@ -31,25 +30,25 @@ public enum Amounts {
 
     public static float value (String unit) {
         switch (unit) {
-            case Cooking.Units.TSP:
+            case "TSP":
                 return TSP.getNumber();
-            case Cooking.Units.ML:
+            case "ML":
                 return ML.getNumber();
             case Cooking.Units.OZ:
                 return OZ.getNumber();
-            case Cooking.Units.POUND:
+            case "POUND":
                 return POUND.getNumber();
-            case Cooking.Units.GALLON:
+            case "GALLON":
                 return GALLON.getNumber();
-            case Cooking.Units.QUART:
+            case "QUART":
                 return QUART.getNumber();
-            case Cooking.Units.PINT:
+            case "PINT":
                 return PINT.getNumber();
-            case Cooking.Units.CUP:
+            case "CUP":
                 return CUP.getNumber();
-            case Cooking.Units.FL_OUNCE:
+            case "FL_OUNCE":
                 return FL_OUNCE.getNumber();
-            case Cooking.Units.TBSP:
+            case "TBSP":
                 return TBSP.getNumber();
             default:
                 return ML.getNumber();
