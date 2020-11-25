@@ -5,8 +5,8 @@ public class Cooking {
 
     public static void main(String[] args) {
         ReceipePrompt prompt = new ReceipePrompt();
-//        prompt.run();
-        prompt.recipeFromStringConverter();
+        prompt.run();
+
     }
 
     public static class Units {

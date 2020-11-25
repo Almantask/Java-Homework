@@ -4,11 +4,9 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ReceipePrompt {
-
+    private static final Scanner scanner = new Scanner(System.in);
 
     public void run() {
-        Scanner scanner = new Scanner(System.in);
-
         displayMenu();
         boolean quit =false;
 
@@ -37,7 +35,6 @@ public class ReceipePrompt {
     }
 
     public void recipeFromStringConverter () {
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Enter ingredient, amount and unit: ");
         String input = scanner.nextLine();
 //        String input = "Sugar 10 ml Cheese 20 tsp";
@@ -81,22 +78,18 @@ public class ReceipePrompt {
     }
 
     private float promptAmount() {
-        try {
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Enter amount of unit:");
-            float amount = scanner.nextFloat();
-            return amount;
-        } catch (InputMismatchException e) {
-            System.out.println("You need to enter number!!!");
-            System.out.println("Enter amount of unit:");
-            Scanner scanner = new Scanner(System.in);
-            float amount = scanner.nextFloat();
-            return amount;
+        System.out.println("Enter amount of unit:");
+        while (true) {
+            try {
+                float amount = scanner.nextFloat();
+                return amount;
+            } catch (InputMismatchException | NumberFormatException e) {
+                System.out.println("Enter number from 0 to 9.");
+            }
         }
     }
 
     private String promptUnit() {
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Enter unit:");
         String unit = scanner.nextLine();
         if (Cooking.Units.isValid(unit)) {
@@ -109,7 +102,6 @@ public class ReceipePrompt {
     }
 
     private String promptUnit1() {
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Enter unit to which you want to convert:");
         String unit = scanner.nextLine();
         if (Cooking.Units.isValid(unit)) {
