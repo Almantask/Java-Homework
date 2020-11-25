@@ -2,8 +2,8 @@ package CookingConvertor;
 
 public class CookingMeasurement {
 
-    private float amount;
-    private String unit;
+    private final float amount;
+    private final String unit;
 
     public CookingMeasurement(float amount, String unit) {
         this.amount = amount;

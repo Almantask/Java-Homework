@@ -37,7 +37,6 @@ public class ReceipePrompt {
     public void recipeFromStringConverter () {
         System.out.println("Enter ingredient, amount and unit: ");
         String input = scanner.nextLine();
-//        String input = "Sugar 10 ml Cheese 20 tsp";
         String [] measurements = input.split(" ");
         for (int i = 0; i < measurements.length; i++) {
             if (checkIfANumber(measurements[i])) {
@@ -56,17 +55,11 @@ public class ReceipePrompt {
 
     private boolean checkIfANumber (String s) {
         try {
-            float number = Float.parseFloat(s);
+            Float.parseFloat(s);
             return true;
         } catch (NumberFormatException e) {
             return false;
         }
-    }
-
-    private void recipeConverter() {
-        String TEXT_RED = "\u001B[31m";
-        String TEXT_RESET = "\u001B[0m";
-        System.out.println(TEXT_RED + "To be implemented!" + TEXT_RESET);
     }
 
     private void cookingMeasurementConverter () {
@@ -82,6 +75,9 @@ public class ReceipePrompt {
         while (true) {
             try {
                 float amount = scanner.nextFloat();
+                if (amount < 0) {
+                    return 0;
+                }
                 return amount;
             } catch (InputMismatchException | NumberFormatException e) {
                 System.out.println("Enter number from 0 to 9.");

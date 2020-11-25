@@ -2,31 +2,25 @@ package CookingConvertor;
 
 public enum Amounts {
 
-    TSP(5f, "TSP"),
-    ML(1f, "ML"),
-    OZ (28f, "OZ"),
-    POUND(454f, "POUND"),
-    GALLON(3.8f, "GALLON"),
-    QUART(0.95f, "QUART"),
-    PINT(473f, "PINT"),
-    CUP(237, "CUP"),
-    FL_OUNCE(30f, "FL_OUNCE"),
-    TBSP(15f, "TBSP");
+    TSP(5f),
+    ML(1f),
+    OZ (28f),
+    POUND(454f),
+    GALLON(3.8f),
+    QUART(0.95f),
+    PINT(473f),
+    CUP(237),
+    FL_OUNCE(30f),
+    TBSP(15f);
 
-    private float number;
-    private String unitName;
+    private final float number;
 
-    Amounts(float number, String unitName) {
+    Amounts(float number) {
         this.number = number;
-        this.unitName = unitName;
     }
 
     public float getNumber() {
         return number;
-    }
-
-    public String getUnitName() {
-        return unitName;
     }
 
     public static float value (String unit) {
@@ -52,24 +46,12 @@ public enum Amounts {
             case "TBSP":
                 return TBSP.getNumber();
             default:
-                return ML.getNumber();
+                return 0;
         }
     }
 
     public static float convertNumber(CookingConvertor.CookingMeasurement originalMeasurement, String unit) {
-        float newAmount = (value(originalMeasurement.getUnit()) / value(unit)) * originalMeasurement.getAmount();
-        return newAmount;
+        return (value(originalMeasurement.getUnit()) / value(unit)) * originalMeasurement.getAmount();
     }
 
-    public static String[] values = {OZ.getUnitName(),POUND.getUnitName(),PINT.getUnitName(),GALLON.getUnitName(),
-            QUART.getUnitName(),CUP.getUnitName(),FL_OUNCE.getUnitName(),TSP.getUnitName(),TBSP.getUnitName(),ML.getUnitName()};
-
-    public static boolean isValid (String input) {
-        for (String value : values) {
-            if (input.toUpperCase().equals(value)) {
-                return false;
-            }
-        }
-        return true;
-    }
 }
