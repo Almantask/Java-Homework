@@ -45,17 +45,20 @@ public class ReceipePrompt {
 
     public void recipeFromFile (){
         ArrayList<String> recipe = new ArrayList<>();
-        File file = new File("recipe.txt");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter file name: ");
+        String files = scanner.nextLine();
+        File file = new File(files);
         try {
             Scanner sc = new Scanner(file);
             while(sc.hasNext()) {
                 recipe.add(sc.next());
             }
             for (int i = 0; i < returnAllIngredientNames(recipe).size(); i++) {
-                System.out.println("Ingredient " + returnAllIngredientNames(recipe).get(i)
-                        + " amount " + returnAllNumbers(recipe).get(i)
-                        + " unit " + returnAllUnits(recipe).get(i));
-            }
+                System.out.println(returnAllIngredientNames(recipe).get(i) + " "
+                        + returnAllNumbers(recipe).get(i) + " "
+                        + returnAllUnits(recipe).get(i));
+                }
             } catch (FileNotFoundException e) {
             System.out.println("File not found");
         }
@@ -70,9 +73,9 @@ public class ReceipePrompt {
             List<String> measurementsInList;
             measurementsInList = Arrays.asList(measurements);
             for (int i = 0; i < returnAllIngredientNames(measurementsInList).size(); i++) {
-                System.out.println("Ingredient " + returnAllIngredientNames(measurementsInList).get(i)
-                        + " amount " + returnAllNumbers(measurementsInList).get(i)
-                        + " unit " + returnAllUnits(measurementsInList).get(i));
+                System.out.println(returnAllIngredientNames(measurementsInList).get(i) + " "
+                        + returnAllNumbers(measurementsInList).get(i) + " "
+                        + returnAllUnits(measurementsInList).get(i));
             }
         }
     }
@@ -142,7 +145,7 @@ public class ReceipePrompt {
                 "[5] - print menu");
     }
 
-    public List<String> returnAllIngredientNames (List<String> array) {
+    private List<String> returnAllIngredientNames (List<String> array) {
         ArrayList<String> arrayList = new ArrayList<>();
         for (String s : array) {
             if (!checkIfANumber(s) && Cooking.Units.isValid(s)) {
@@ -152,7 +155,7 @@ public class ReceipePrompt {
         return arrayList;
     }
 
-    public List<String> returnAllNumbers (List<String> array) {
+    private List<String> returnAllNumbers (List<String> array) {
         ArrayList<String> arrayList = new ArrayList<>();
         for (String s : array) {
             if (checkIfANumber(s)) {
@@ -162,7 +165,7 @@ public class ReceipePrompt {
         return arrayList;
     }
 
-    public List<String> returnAllUnits (List<String> array) {
+    private List<String> returnAllUnits (List<String> array) {
         ArrayList<String> arrayList = new ArrayList<>();
         for (String s : array) {
             if (!Cooking.Units.isValid(s)) {
