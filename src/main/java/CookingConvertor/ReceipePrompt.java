@@ -1,10 +1,15 @@
 package CookingConvertor;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 public class ReceipePrompt {
-    private static final Scanner scanner = new Scanner(System.in);
+    public static final Scanner scanner = new Scanner(System.in);
 
     public void run() {
         displayMenu();
@@ -21,34 +26,53 @@ public class ReceipePrompt {
                     cookingMeasurementConverter();
                     break;
                 case 2:
-                    System.out.println("For the recipe processing to work on multiple ingredients you have to write in syntax 'ingredient amount unit' and repeat in the same order till your done");
+                    System.out.println("Enter ingredient amount and unit no matter the sequence");
                     recipeFromStringConverter();
                     break;
                 case 3:
-                    quit = true;
+                    recipeFromFile();
                     break;
                 case 4:
+                    quit = true;
+                    break;
+                case 5:
                     displayMenu();
                     break;
+
             }
         }
     }
 
+    public void recipeFromFile (){
+        ArrayList<String> recipe = new ArrayList<>();
+        File file = new File("recipe.txt");
+        try {
+            Scanner sc = new Scanner(file);
+            while(sc.hasNext()) {
+                recipe.add(sc.next());
+            }
+            for (int i = 0; i < returnAllIngredientNames(recipe).size(); i++) {
+                System.out.println("Ingredient " + returnAllIngredientNames(recipe).get(i)
+                        + " amount " + returnAllNumbers(recipe).get(i)
+                        + " unit " + returnAllUnits(recipe).get(i));
+            }
+            } catch (FileNotFoundException e) {
+            System.out.println("File not found");
+        }
+    }
+
     public void recipeFromStringConverter () {
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Enter ingredient, amount and unit: ");
         String input = scanner.nextLine();
-        String [] measurements = input.split(" ");
-        for (int i = 0; i < measurements.length; i++) {
-            if (checkIfANumber(measurements[i])) {
-                float number = Float.parseFloat(measurements[i++]);
-                if (!Cooking.Units.isValid(measurements[i])) {
-                    CookingMeasurement calculated = CookingMeasurementConverter.convert(new CookingMeasurement(number, measurements[i].toUpperCase()), "ML");
-                    System.out.println(" Amount: " + calculated.getAmount() + " ML");
-                }
-            }
-            if (!checkIfANumber(measurements[i]) && Cooking.Units.isValid(measurements[i])) {
-                String component = measurements[i];
-                System.out.println(component);
+        if (!input.isEmpty()) {
+            String[] measurements = input.split(" ");
+            List<String> measurementsInList;
+            measurementsInList = Arrays.asList(measurements);
+            for (int i = 0; i < returnAllIngredientNames(measurementsInList).size(); i++) {
+                System.out.println("Ingredient " + returnAllIngredientNames(measurementsInList).get(i)
+                        + " amount " + returnAllNumbers(measurementsInList).get(i)
+                        + " unit " + returnAllUnits(measurementsInList).get(i));
             }
         }
     }
@@ -113,8 +137,41 @@ public class ReceipePrompt {
         System.out.println("Menu");
         System.out.println("[1] - basic conversion of a measurement\n" +
                 "[2] - recipe processing\n" +
-                "[3] - quit program\n" +
-                "[4] - print menu");
+                "[3] - recipe processing from file\n" +
+                "[4] - quit program\n" +
+                "[5] - print menu");
     }
+
+    public List<String> returnAllIngredientNames (List<String> array) {
+        ArrayList<String> arrayList = new ArrayList<>();
+        for (String s : array) {
+            if (!checkIfANumber(s) && Cooking.Units.isValid(s)) {
+                arrayList.add(s);
+            }
+        }
+        return arrayList;
+    }
+
+    public List<String> returnAllNumbers (List<String> array) {
+        ArrayList<String> arrayList = new ArrayList<>();
+        for (String s : array) {
+            if (checkIfANumber(s)) {
+                arrayList.add(s);
+            }
+        }
+        return arrayList;
+    }
+
+    public List<String> returnAllUnits (List<String> array) {
+        ArrayList<String> arrayList = new ArrayList<>();
+        for (String s : array) {
+            if (!Cooking.Units.isValid(s)) {
+                arrayList.add(s);
+            }
+        }
+        return arrayList;
+    }
+
+
 }
 
