@@ -55,6 +55,10 @@ public class ReceipePrompt {
                 recipe.add(sc.next());
             }
             for (int i = 0; i < returnAllIngredientNames(recipe).size(); i++) {
+                if (returnAllUnits(recipe) != returnAllNumbers(recipe) && returnAllUnits(recipe) != returnAllIngredientNames(recipe)) {
+                    System.out.println("Missing either the ingredient, amount needed or unit in recipe.");
+                    break;
+                }
                 System.out.println(returnAllIngredientNames(recipe).get(i) + " "
                         + returnAllNumbers(recipe).get(i) + " "
                         + returnAllUnits(recipe).get(i));
