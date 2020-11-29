@@ -55,11 +55,7 @@ public class ReceipePrompt {
                 recipe.add(sc.next());
             }
             for (int i = 0; i < returnAllIngredientNames(recipe).size(); i++) {
-                if (returnAllUnits(recipe) != returnAllNumbers(recipe) && returnAllUnits(recipe) != returnAllIngredientNames(recipe)) {
-                    System.out.println("Missing either the ingredient, amount needed or unit in recipe.");
-                    break;
-                }
-                System.out.println(returnAllIngredientNames(recipe).get(i) + " "
+                System.out.println("[" + returnAllIngredientNames(recipe).get(i) + "]\n "
                         + returnAllNumbers(recipe).get(i) + " "
                         + returnAllUnits(recipe).get(i));
                 }
@@ -77,7 +73,7 @@ public class ReceipePrompt {
             List<String> measurementsInList;
             measurementsInList = Arrays.asList(measurements);
             for (int i = 0; i < returnAllIngredientNames(measurementsInList).size(); i++) {
-                System.out.println(returnAllIngredientNames(measurementsInList).get(i) + " "
+                System.out.println("[" + returnAllIngredientNames(measurementsInList).get(i) + "]\n "
                         + returnAllNumbers(measurementsInList).get(i) + " "
                         + returnAllUnits(measurementsInList).get(i));
             }
