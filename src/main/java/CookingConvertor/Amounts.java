@@ -29,7 +29,7 @@ public enum Amounts {
                 return TSP.getNumber();
             case "ML":
                 return ML.getNumber();
-            case Cooking.Units.OZ:
+            case "OZ":
                 return OZ.getNumber();
             case "POUND":
                 return POUND.getNumber();
@@ -49,8 +49,18 @@ public enum Amounts {
                 return 0;
         }
     }
+    public static String[] values = {OZ.name(),POUND.name(),PINT.name(),GALLON.name(),QUART.name(),CUP.name(),FL_OUNCE.name(),TSP.name(),TBSP.name(),ML.name()};
 
-    public static float convertNumber(CookingConvertor.CookingMeasurement originalMeasurement, String unit) {
+    public static boolean isValid (String input) {
+        for (String value : values) {
+            if (input.equals(value)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static float convertNumber(CookingMeasurement originalMeasurement, String unit) {
         return (value(originalMeasurement.getUnit()) / value(unit)) * originalMeasurement.getAmount();
     }
 

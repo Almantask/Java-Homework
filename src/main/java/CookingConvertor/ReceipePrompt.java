@@ -9,16 +9,16 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ReceipePrompt {
-    public static final Scanner scanner = new Scanner(System.in);
 
     public void run() {
+        Scanner scanner = new Scanner(System.in);
         displayMenu();
         boolean quit =false;
 
         while (!quit) {
 
             System.out.println("Enter number from menu" +
-                    "(To print menu again enter [4]):");
+                    "(To print menu again enter [5]):");
             int action = scanner.nextInt();
 
             switch (action) {
@@ -93,11 +93,12 @@ public class ReceipePrompt {
         float amount = promptAmount();
         String fromUnit = promptUnit();
         String toUnit = promptUnit1();
-        CookingMeasurement calculated = CookingMeasurementConverter.convert(new CookingMeasurement(amount, fromUnit.toUpperCase()),toUnit);
+        CookingMeasurement calculated = CookingMeasurementConverter.convert(new CookingMeasurement(amount, fromUnit.toUpperCase()),toUnit.toUpperCase());
         System.out.println("Amount = " + calculated.getAmount() + "\nUnit from which converted: " + fromUnit.toUpperCase() + "\nConverted to: " + toUnit.toUpperCase());
     }
 
     private float promptAmount() {
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Enter amount of unit:");
         while (true) {
             try {
@@ -113,10 +114,11 @@ public class ReceipePrompt {
     }
 
     private String promptUnit() {
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Enter unit:");
         String unit = scanner.nextLine();
-        if (Cooking.Units.isValid(unit)) {
-            while (Cooking.Units.isValid(unit)) {
+        if (!Amounts.isValid(unit.toUpperCase())) {
+            while (!Amounts.isValid(unit.toUpperCase())) {
                 System.out.println("Enter unit again, because previous doesn't exist:");
                 unit = scanner.nextLine();
             }
@@ -125,10 +127,11 @@ public class ReceipePrompt {
     }
 
     private String promptUnit1() {
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Enter unit to which you want to convert:");
         String unit = scanner.nextLine();
-        if (Cooking.Units.isValid(unit)) {
-            while (Cooking.Units.isValid(unit)) {
+        if (!Amounts.isValid(unit.toUpperCase())) {
+            while (!Amounts.isValid(unit.toUpperCase())) {
                 System.out.println("Enter unit again, because previous doesn't exist:");
                 unit = scanner.nextLine();
             }
@@ -148,7 +151,7 @@ public class ReceipePrompt {
     private List<String> returnAllIngredientNames (List<String> array) {
         ArrayList<String> arrayList = new ArrayList<>();
         for (String s : array) {
-            if (!checkIfANumber(s) && Cooking.Units.isValid(s)) {
+            if (!checkIfANumber(s) && !Amounts.isValid(s.toUpperCase())) {
                 arrayList.add(s);
             }
         }
@@ -168,7 +171,7 @@ public class ReceipePrompt {
     private List<String> returnAllUnits (List<String> array) {
         ArrayList<String> arrayList = new ArrayList<>();
         for (String s : array) {
-            if (!Cooking.Units.isValid(s)) {
+            if (Amounts.isValid(s.toUpperCase())) {
                 arrayList.add(s);
             }
         }
