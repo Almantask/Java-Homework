@@ -13,12 +13,14 @@ public class Alarm implements Beeper {
     }
 
     public void toggle(){
-
+        isOn = !isOn;
     }
 
     @Override
     public void beep() {
         // but only beep if alarm is on
-        writer.println("BEEP");
+        if (isOn == true) {
+            writer.println("BEEP");
+        }
     }
 }
