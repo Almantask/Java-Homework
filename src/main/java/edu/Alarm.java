@@ -13,7 +13,7 @@ public class Alarm implements Beeper {
     }
 
     public void toggle(){
-        isOn = !isOn;
+        this.isOn = !isOn;
     }
 
     @Override
@@ -22,5 +22,6 @@ public class Alarm implements Beeper {
         if (isOn == true) {
             writer.println("BEEP");
         }
+        else return;
     }
 }

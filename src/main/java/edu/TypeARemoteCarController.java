@@ -16,8 +16,10 @@ public class TypeARemoteCarController {
         if (!car.isLocked()){
             car.lock();
             alarm.toggle();
+            lights.blink();
+        }else {
+            lights.blink();
         }
-        lights.blink();
     }
 
     public void unlock(){
