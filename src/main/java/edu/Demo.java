@@ -1,7 +1,9 @@
 package edu;
 
+import edu.Revision.Rev;
+
 public class Demo {
     public static void main(String[] args) {
-        System.out.println("Hello!");
+        Rev.run();
     }
 }
