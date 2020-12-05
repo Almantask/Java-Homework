@@ -23,7 +23,5 @@ public class Demo {
                 .mapToInt(Integer::intValue)
                 .sum();
         // and many more...
-        StringBuilder sb = new StringBuilder();
-        sb
     }
 }

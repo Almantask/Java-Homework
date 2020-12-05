@@ -18,4 +18,11 @@ public class Item {
         return price;
     }
 
+    @Override
+    public String toString() {
+        return "Item{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                '}';
+    }
 }
