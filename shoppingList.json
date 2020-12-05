@@ -1,0 +1,42 @@
+{
+  "shops" : [ {
+    "name" : "Edvinas Shop",
+    "shoppingBag" : {
+      "items" : [ {
+        "name" : "Car",
+        "price" : 10.0
+      }, {
+        "name" : "Book",
+        "price" : 22.0
+      }, {
+        "name" : "Shoes",
+        "price" : 10.0
+      }, {
+        "name" : "Table",
+        "price" : 55.0
+      }, {
+        "name" : "Computer",
+        "price" : 120.0
+      } ],
+      "totalPrice" : 217.0
+    }
+  }, {
+    "name" : "Edvinas1 Shop",
+    "shoppingBag" : {
+      "items" : [ {
+        "name" : "Car",
+        "price" : 10.0
+      }, {
+        "name" : "Book",
+        "price" : 22.0
+      }, {
+        "name" : "Shoes",
+        "price" : 10.0
+      }, {
+        "name" : "Table",
+        "price" : 55.0
+      } ],
+      "totalPrice" : 97.0
+    }
+  } ]
+}

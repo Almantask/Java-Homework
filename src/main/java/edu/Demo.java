@@ -4,12 +4,19 @@ import ChristmasShopping.Item;
 import ChristmasShopping.Shop;
 import ChristmasShopping.ShoppingBag;
 import ChristmasShopping.ShoppingList;
+import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializerProvider;
+import com.google.gson.Gson;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Demo {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Item car = new Item("Car", 10);
         Item book = new Item("Book", 22);
         Item shoes = new Item("Shoes", 10);
@@ -34,7 +41,6 @@ public class Demo {
         shoppingBag1.addItem(book1);
         shoppingBag1.addItem(shoes1);
         shoppingBag1.addItem(table1);
-        shoppingBag1.addItem(computer1);
 
         Shop shop = new Shop("Edvinas Shop", shoppingBag);
         Shop shop1 = new Shop("Edvinas1 Shop", shoppingBag1);
@@ -45,6 +51,16 @@ public class Demo {
 
         System.out.println(shoppingList.returnFullPrice());
 
+        writeValue(shoppingList);
 
     }
+
+    public static void writeValue (ShoppingList shoppingList) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        String json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(shoppingList);
+        FileWriter myWriter = new FileWriter("shoppingList.json");
+        myWriter.write(json);
+        myWriter.close();
+    }
+
 }

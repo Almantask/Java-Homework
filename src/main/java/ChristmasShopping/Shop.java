@@ -17,5 +17,7 @@ public class Shop {
         return shoppingBag;
     }
 
-
+    public String getName() {
+        return name;
+    }
 }
