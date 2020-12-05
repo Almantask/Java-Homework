@@ -36,9 +36,6 @@ public class Demo {
         shoppingBag1.addItem(table1);
         shoppingBag1.addItem(computer1);
 
-//        double maxPrice = shoppingBag.getTotalPriceOfShoppingBag() + shoppingBag1.getTotalPriceOfShoppingBag();
-//        System.out.println(maxPrice);
-
         Shop shop = new Shop("Edvinas Shop", shoppingBag);
         Shop shop1 = new Shop("Edvinas1 Shop", shoppingBag1);
 
@@ -46,7 +43,8 @@ public class Demo {
         shoppingList.addShop(shop);
         shoppingList.addShop(shop1);
 
-
         System.out.println(shoppingList.returnFullPrice());
+
+
     }
 }

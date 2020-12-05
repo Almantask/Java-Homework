@@ -16,7 +16,7 @@ public class ShoppingList {
 
     public double returnFullPrice() {
         return shops.stream()
-                .mapToDouble(shop -> shop.getShoppingBag().getTotalPriceOfShoppingBag())
+                .mapToDouble(shop -> shop.getShoppingBag().getTotalPrice())
                 .sum();
     }
 }
