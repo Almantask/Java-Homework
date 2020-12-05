@@ -17,4 +17,12 @@ public class Items {
     public int getPrice() {
         return price;
     }
+
+    @Override
+    public String toString() {
+        return "Items{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                '}';
+    }
 }

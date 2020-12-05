@@ -23,14 +23,17 @@ public class ShoppingBag {
         return sum;
     }
 
+    public void printAllItems () {
+        for (int i = 0; i < this.items.size(); i++) {
+            System.out.println("Item: " + this.items.get(i).getName());
+            System.out.println("Price: " + this.items.get(i).getPrice());
+            System.out.println("************************************");
+        }
+    }
+
     public ArrayList<Items> getItems() {
         return items;
     }
 
-    @Override
-    public String toString() {
-        return "ShoppingBag{" +
-                "items=" + items +
-                '}';
-    }
+
 }

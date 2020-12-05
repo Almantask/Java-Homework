@@ -18,6 +18,10 @@ public class Demo {
         shoppingBag.addItem(table);
         shoppingBag.addItem(computer);
 
+        shoppingBag.printAllItems();
+
         System.out.println(shoppingBag.getTotalPrice());
+
+
     }
 }
