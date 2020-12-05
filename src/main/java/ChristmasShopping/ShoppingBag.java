@@ -6,22 +6,18 @@ import java.util.List;
 
 public class ShoppingBag {
 
-    private final LinkedList<Item> items;
+    private final ArrayList<Item> items;
 
     public ShoppingBag() {
-        this.items = new LinkedList<>();
+        this.items = new ArrayList<>();
     }
 
     public void addItem(Item item) {
         this.items.add(item);
     }
 
-    public double getTotalPrice() {
-        double sum = 0;
-        for (Item item : this.items) {
-            sum += item.getPrice();
-        }
-        return sum;
+    public double getTotalPriceOfShoppingBag() {
+        return this.items.stream().map(Item::getPrice).reduce(0d, Double::sum);
     }
 
     @Override
