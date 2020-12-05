@@ -4,16 +4,10 @@ import ChristmasShopping.Item;
 import ChristmasShopping.Shop;
 import ChristmasShopping.ShoppingBag;
 import ChristmasShopping.ShoppingList;
-import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializerProvider;
-import com.google.gson.Gson;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Demo {
     public static void main(String[] args) throws IOException {

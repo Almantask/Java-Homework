@@ -1,9 +1,16 @@
 package edu.Sugar;
 
+import ChristmasShopping.Item;
+import com.sun.tools.javac.jvm.Items;
+
 public class Demo {
     public static void run(){
-
+        ShoppingBag bag1 = new ShoppingBag();
+        ShoppingBag bag2 = new ShoppingBag(new Item("1", 1));
+        ShoppingBag bag3 = new ShoppingBag(new Item[]{new Item("1", 1)});
+        ShoppingBag bag4 = new ShoppingBag(new Item("1", 1), new Item("2", 2));
     }
+
 
     // Syntax: type ... argumentName.
     public static void zeroToManyArguments1(Object ... objects)
