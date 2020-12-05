@@ -19,6 +19,7 @@ public class Demo {
         shoppingBag.addItem(computer);
 
         System.out.println(shoppingBag);
+        shoppingBag.getTotalPrice();
 
 
     }

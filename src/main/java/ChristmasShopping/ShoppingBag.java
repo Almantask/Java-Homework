@@ -1,13 +1,15 @@
 package ChristmasShopping;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 public class ShoppingBag {
 
-    private ArrayList<Item> items;
+    private final LinkedList<Item> items;
 
     public ShoppingBag() {
-        this.items = new ArrayList<Item>();
+        this.items = new LinkedList<>();
     }
 
     public void addItem(Item item) {
@@ -16,8 +18,8 @@ public class ShoppingBag {
 
     public double getTotalPrice() {
         double sum = 0;
-        for (int i = 0; i < this.items.size(); i++) {
-            sum += this.items.get(i).getPrice();
+        for (Item item : this.items) {
+            sum += item.getPrice();
         }
         return sum;
     }
@@ -25,9 +27,9 @@ public class ShoppingBag {
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
-        for (int i = 0; i < this.items.size(); i++) {
-            stringBuilder.append("Item: " + this.items.get(i).getName() + "\n");
-            stringBuilder.append("Price: " + this.items.get(i).getPrice() + "\n");
+        for (Item item : this.items) {
+            stringBuilder.append("Item: ").append(item.getName()).append("\n");
+            stringBuilder.append("Price: ").append(item.getPrice()).append("\n");
             stringBuilder.append("************************************" + "\n");
         }
         return stringBuilder.toString();
