@@ -4,35 +4,37 @@ import java.util.ArrayList;
 
 public class ShoppingBag {
 
-    private ArrayList<Items> items;
+    private ArrayList<Item> items;
 
     public ShoppingBag() {
-        this.items = new ArrayList<Items>();
+        this.items = new ArrayList<Item>();
     }
 
-    public boolean addItem (Items items) {
-        this.items.add(items);
-        return true;
+    public void addItem(Item item) {
+        this.items.add(item);
     }
 
-    public int getTotalPrice () {
-        int sum = 0;
-        for (int i = 0; i <this.items.size(); i++) {
+    public double getTotalPrice() {
+        double sum = 0;
+        for (int i = 0; i < this.items.size(); i++) {
             sum += this.items.get(i).getPrice();
         }
         return sum;
     }
 
-    public void printAllItems () {
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < this.items.size(); i++) {
-            System.out.println("Item: " + this.items.get(i).getName());
-            System.out.println("Price: " + this.items.get(i).getPrice());
-            System.out.println("************************************");
+            stringBuilder.append("Item: " + this.items.get(i).getName() + "\n");
+            stringBuilder.append("Price: " + this.items.get(i).getPrice() + "\n");
+            stringBuilder.append("************************************" + "\n");
         }
+        return stringBuilder.toString();
     }
 
-    public ArrayList<Items> getItems() {
-        return items;
+    public int getItems() {
+        return items.size();
     }
 
 

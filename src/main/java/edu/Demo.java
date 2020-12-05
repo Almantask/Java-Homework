@@ -1,15 +1,15 @@
 package edu;
 
-import ChristmasShopping.Items;
+import ChristmasShopping.Item;
 import ChristmasShopping.ShoppingBag;
 
 public class Demo {
     public static void main(String[] args) {
-        Items car = new Items("Car", 10);
-        Items book = new Items("Book", 22);
-        Items shoes = new Items("Shoes", 10);
-        Items table = new Items("Table", 55);
-        Items computer = new Items("Computer", 120);
+        Item car = new Item("Car", 10);
+        Item book = new Item("Book", 22);
+        Item shoes = new Item("Shoes", 10);
+        Item table = new Item("Table", 55);
+        Item computer = new Item("Computer", 120);
 
         ShoppingBag shoppingBag = new ShoppingBag();
         shoppingBag.addItem(car);
@@ -18,9 +18,7 @@ public class Demo {
         shoppingBag.addItem(table);
         shoppingBag.addItem(computer);
 
-        shoppingBag.printAllItems();
-
-        System.out.println(shoppingBag.getTotalPrice());
+        System.out.println(shoppingBag);
 
 
     }
