@@ -1,4 +1,4 @@
-package edu.multithreading.result;
+package edu.result;
 
 import java.io.File;
 import java.util.concurrent.Callable;

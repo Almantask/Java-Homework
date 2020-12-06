@@ -1,12 +1,10 @@
-package edu.multithreading.action;
+package edu.action;
 
 import com.google.common.base.Stopwatch;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;
-import java.time.Instant;
-import java.time.LocalDateTime;
 import java.util.concurrent.TimeUnit;
 
 // runnable interface

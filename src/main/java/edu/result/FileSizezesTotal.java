@@ -1,7 +1,6 @@
-package edu.multithreading.result;
+package edu.result;
 
 import com.google.common.base.Stopwatch;
-import edu.multithreading.action.FileCopyTask;
 
 import java.util.concurrent.*;
 

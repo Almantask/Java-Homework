@@ -1,7 +1,6 @@
 package edu;
 
-import edu.multithreading.action.*;
-import edu.multithreading.result.FileSizezesTotal;
+import edu.action.*;
 
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;

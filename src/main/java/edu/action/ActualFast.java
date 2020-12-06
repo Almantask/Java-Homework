@@ -1,4 +1,4 @@
-package edu.multithreading.action;
+package edu.action;
 
 import com.google.common.base.Stopwatch;
 
