@@ -12,7 +12,9 @@ import java.util.concurrent.TimeUnit;
 // runnable interface
 // a task
 // can run
-public class FileCopyTask{
+// Needed for a thread
+// No multithreading yet.
+public class FileCopyTask implements Runnable{
     private final String from;
     private final String to;
 
@@ -24,13 +26,17 @@ public class FileCopyTask{
 
     // Any work that happens on the thread
     // Is now a responsibility of it to handle errors.
+    @Override
     public void run() {
         try {
+            // Can be whatever...
+
+
             Stopwatch sw = Stopwatch.createStarted();
             System.out.println(String.format("Started copying from %s to %s", from, to));
             FileUtils.copyFile(new File(from), new File(to));
             sw.stop();
-            System.out.println(String.format("Done copying from %s to %s. Elapsed %d ns", from, to, sw.elapsed(TimeUnit.NANOSECONDS)));
+            System.out.println(String.format("Done copying from %s to %s. Elapsed %d ms", from, to, sw.elapsed(TimeUnit.MILLISECONDS)));
         } catch (IOException e) {
             e.printStackTrace();
         }

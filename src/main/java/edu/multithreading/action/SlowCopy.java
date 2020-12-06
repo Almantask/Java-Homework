@@ -27,17 +27,17 @@ public class SlowCopy {
         System.out.println("-------------Started slow");
         Stopwatch stopwatch = Stopwatch.createStarted();
         for (String file : files) {
-            try {
                 String from = in+"/"+file;
                 String to = out+"/"+file;
                 Stopwatch sw = Stopwatch.createStarted();
                 System.out.println(String.format("Started copying from %s to %s", from, to));
-                FileUtils.copyFile(new File(from), new File(to));
+
+                // Synchronous call- blocks (waits to finish)
+                FileCopyTask task = new FileCopyTask(from, to);
+                task.run();
+
                 sw.stop();
                 System.out.println(String.format("Done copying from %s to %s. Elapsed %d ns", from, to, sw.elapsed(TimeUnit.NANOSECONDS)));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
         System.out.println("--------------Finished slow...");
         stopwatch.stop();
