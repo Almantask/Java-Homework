@@ -25,15 +25,22 @@ public class ManagedCopy {
 
         System.out.println("-------------Managed");
         Stopwatch stopwatch = Stopwatch.createStarted();
-        ExecutorService es = Executors.newFixedThreadPool(1);
+        // Like a brigade of workers
+        // That's the way to do it.
+        ExecutorService es = Executors.newFixedThreadPool(100);
         for (int i = 0; i < files.length; i++) {
             String file = files[i];
             FileCopyTask task = new FileCopyTask(in + "/" + file, out + "/" + file);
+            // Work submitted for a brigade.
             es.submit(task);
         }
 
+        // signed contract, no more work will be accepted.
         es.shutdown();
         // wait for results.
+        // join equivalent
+        // Waiting for workers to do their job.
+        // No more than 1 second.
         es.awaitTermination(1, TimeUnit.SECONDS);
 
         System.out.println("Finished managed");
