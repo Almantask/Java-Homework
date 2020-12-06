@@ -1,4 +1,4 @@
-package edu.result;
+package edu.multhreading.result;
 
 import java.io.File;
 import java.util.concurrent.Callable;

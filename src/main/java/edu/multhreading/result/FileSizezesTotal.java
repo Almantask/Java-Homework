@@ -1,4 +1,4 @@
-package edu.result;
+package edu.multhreading.result;
 
 import com.google.common.base.Stopwatch;
 

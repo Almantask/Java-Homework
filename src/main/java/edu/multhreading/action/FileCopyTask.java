@@ -1,4 +1,4 @@
-package edu.action;
+package edu.multhreading.action;
 
 import com.google.common.base.Stopwatch;
 import org.apache.commons.io.FileUtils;
