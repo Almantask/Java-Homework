@@ -1,7 +1,6 @@
 package edu.Sugar;
 
 import ChristmasShopping.Item;
-import com.sun.tools.javac.jvm.Items;
 
 public class Demo {
     public static void run(){
