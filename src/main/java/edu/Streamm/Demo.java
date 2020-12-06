@@ -28,7 +28,9 @@ public class Demo {
         // z is input.
         // personToInt is what I do with input
         int avg1 = people
-                .mapToInt(z -> personToInt(z))
+                // z -> foreach
+                // -> do something with each
+                .mapToInt(z -> personToInt(p1))
                 .sum() / (int)people.count();
 
         // for every person, get age. This is how from person we get age.
@@ -41,7 +43,13 @@ public class Demo {
                 .mapToInt(Person::getAge)
                 .sum() / (int)people.count();
 
+        // () -> No parameters
+        // () -> getHardcoded5()
+
         System.out.println(oldest1);
+    }
+    private static int getHardcoded5(){
+        return 5;
     }
 
     private static int personToInt(Person z){
