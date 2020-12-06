@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 // runnable interface
 // a task
 // can run
-public class FileCopyTask implements Runnable {
+public class FileCopyTask{
     private final String from;
     private final String to;
 
@@ -24,7 +24,6 @@ public class FileCopyTask implements Runnable {
 
     // Any work that happens on the thread
     // Is now a responsibility of it to handle errors.
-    @Override
     public void run() {
         try {
             Stopwatch sw = Stopwatch.createStarted();

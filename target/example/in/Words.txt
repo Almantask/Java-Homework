@@ -1,0 +1,159 @@
+Aardvark
+Addax
+Agouti
+Alligator	hatchling
+Alpaca	cria
+Anteater	pup
+Antelope	calf
+	Ant	antling
+	Ape	baby
+	Armadillo	pup
+	Aye-aye	baby, infant
+	Baboon	infant
+	Bat	pup
+	Bear	cub
+	Bee	larva
+	Beluga	calf
+	Binturong, Bearcat	pup, kitten
+	Binturong, Bearcat	pup, kitten
+	Bird	hatchling, chick
+	Boar	piglet, shoat, farrow
+	Bobcat	kitten or cub
+	Bongo	calf
+	Bonobo	baby
+	Butterfly	caterpillar, larva, pupa, chrysalis
+	Camel	calf
+	Caribou	calf or fawn
+	Cat	kitten
+	Cattle	calf
+	Cheetah	cub
+	Chicken	chick, pullet (young hen), cockrell (young rooster)
+	Cicada	nymph
+	Clam	larva
+	Cockroach	nymph
+	Codfish	codling, hake, sprag, sprat
+	Coyote	pup, whelp
+	Crane	chick
+	Crocodile	hatchling
+	Crow	chick
+	Deer	fawn
+	Dinosaur	hatchling, juvenile
+	Dog	pup
+	Dolphin	pup, calf
+	Donkey	colt, foal
+	Dove	squab, chick
+	Duck	duckling
+	Eagle	fledgling, eaglet
+	Echidna	puggle
+	Eel	leptocephalus (larva), elver (juvenile)
+	Elephant	calf
+	Elk	calf
+	Emu	chick, hatchling
+	Falcon	chick
+	Ferret	kit
+	Finch	chick
+	Fish	fry, fingerling
+	Fly	maggot
+	Fox	kit, cub, pup
+	Frog	tadpole, polliwog, froglet
+	Gerbil	pup
+	Giraffe	calf
+	Gnat	larva
+	Gnu	calf
+	Goat	kid, billy
+	Goose	gosling
+	Gorilla	infant
+	Grasshopper	nymph
+	Grouse	chick, poult, squealer or cheeper
+	Guinea pig	pig, pup
+	Gull	chick
+	Hamster	pup
+	Hare	leveret
+	Hawk	eyas
+	Hedgehog	piglet, pup
+	Heron	chick
+	Hippopotamus	calf
+	Hog	shoat, farrow
+	Honey Badger	kit, cub
+	Hornet	larva
+	Horse	foal, colt (m), filly (f), stat, stag, hog-colt, youngster, yearling or hogget
+	Hound	pup
+	Human	baby, infant, toddler
+	Hummingbird	chick
+	Hyena	cub
+	Jay	chick
+	Jellyfish	ephyna
+	Kangaroo	joey
+	Koala	joey
+	Lark	chick
+	Lemur	baby, infant
+	Leopard	cub
+	Llama	cria
+	Louse	nit, nymph
+	Magpie	chick
+	Mallard	duckling
+	Manatee	calf
+	Mole	pup
+	Monkey	infant
+	Moose	calf
+	Mosquito	nymph, wriggler, tumbler
+	Mouse	pup, pinkie, kitten
+	Mule	foal
+	Muskrat	kit
+	Nightingale	chick
+	Opossum	joey
+	Ostrich	chick
+	Otter	whelp, pup
+	Owl	owlet, fledgling
+	Ox	stot, calf
+	Oyster	spat
+	Panda	cub
+	Parrot	chick
+	Partridge	cheeper
+	Peacock	peachick
+	Penguin	chick
+	Pheasant	chick
+	Pig	piglet, shoat, farrow
+	Pigeon	squab, squeaker
+	Platypus	puggle
+	Porcupine	porcupette
+	Porpoise	calf
+	Possum	joey
+	Prairie dog	pup
+	Pronghorn	fawn
+	Quail	chick
+	Rabbit	kitten, bunny, kit
+	Raccoon	cub
+	Rat	pup, pinkie, kitten
+	Reindeer	calf
+	Rhinoceros	calf
+	Sand Dollar	larva, pluteus, juvenile
+	Sea Urchin	larva, pluteus, juvenile
+	Seal	pup
+	Serval	kitten
+Shark	pup
+	Sheep	lamb, lambkin, cosset
+	Skunk	kit
+	Snake	snakelet, neonate, hatchling snake
+	Spider	spiderling
+	Squirrel	pup, kit, kitten
+	Swan	cygnet, flapper
+	Termite	larva
+	Tiger	cub, whelp
+	Toad	tadpole
+	Trout	fry, fingerling
+	Turkey	poult
+	Turtle	hatchling
+	Wallaby	joey
+	Walrus	cub, pup
+	Wasp	larva
+	Weasel	kit
+	Whale	calf
+	Wolf	pup, whelp
+	Wombat	joey
+	Woodchuck	kit, cub
+	Woodpecker	chick
+	Wren	chick
+	Yak	calf
+	Yellow Jacket	larva
+	Zebra	colt, foal
