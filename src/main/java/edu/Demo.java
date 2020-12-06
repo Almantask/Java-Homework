@@ -23,5 +23,8 @@ public class Demo {
         RecursionExample.loop10Times(0);
         System.out.println(RecursionExample.fibonacci(5));
         RaceCondition.add100x100();
+        Reflection.demo();
+        Item item = new Item("Hello", null, 1d);
+        Validator.validate(item);
     }
 }
