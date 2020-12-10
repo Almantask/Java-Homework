@@ -7,9 +7,8 @@ import java.util.Scanner;
 
 public class Day2 {
 
-    public static int solveDay2() {
+    public static int solveDay2(List input) {
 
-        List input = addData();
         List limits = limitsList(input);
         List letters = lettersList(input);
         List codes = codesList(input);
@@ -19,14 +18,13 @@ public class Day2 {
             if (passwordsValidation(limits.get(i).toString(), letters.get(i).toString(), codes.get(i).toString()) != true) {
                 continue;
             }
-            sumValidPasswords += 1;
+            sumValidPasswords ++;
         }
         return sumValidPasswords;
     }
 
-    public static int solveDay2_2() {
+    public static int solveDay2_2(List input) {
 
-        List input = addData();
         List limits = limitsList(input);
         List letters = lettersList(input);
         List codes = codesList(input);
@@ -36,7 +34,7 @@ public class Day2 {
             if (passwordsValidation2(limits.get(i).toString(), letters.get(i).toString(), codes.get(i).toString()) != true) {
                 continue;
             }
-            sumValidPasswords2 += 1;
+            sumValidPasswords2 ++;
         }
         return sumValidPasswords2;
     }
@@ -51,21 +49,6 @@ public class Day2 {
         char second = code.charAt(max(limit)-1);
         char letter2= letter.charAt(0);
         return (Objects.equals(first, letter2) && !Objects.equals(second, letter2)) || (!Objects.equals(first, letter2) && Objects.equals(second, letter2));
-    }
-
-    public static List addData() {
-        Scanner scanner = new Scanner(System.in);
-        ArrayList codeList = new ArrayList();
-        System.out.println("Enter data (when finish write done and press Enter):");
-
-        while (scanner.hasNext()) {
-            String i = scanner.next();
-            if (i.equals("done")) {
-                break;
-            }
-            codeList.add(i);
-        }
-        return codeList;
     }
 
     private static List<String> limitsList(List<String> strings) {
