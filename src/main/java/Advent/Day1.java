@@ -1,22 +1,21 @@
-package Day1;
+package Advent;
 
 public class Day1 {
-    public static int MultiplyingEntries (int[] expenseReport){
+    public static int solveDay1(int[] ints) {
         int multiplying = 0;
 
-        for(int i=0; i<expenseReport.length-1; i++) {
-            for (int j = 1; j < expenseReport.length; j++){
-                if(expenseReport(i) + expenseReport(j) = 2020){
-                    multiplying = expenseReport(i) * expenseReport(j);
+        for (int i = 0; i < ints.length - 1; i++) {
+            for (int j = 1; j < ints.length; j++) {
+                for (int k = 2; k < ints.length; k++) {
+                    if (ints[i] + ints[j] + ints[k] == 2020) {
+                        multiplying = ints[i] * ints[j] * ints[k];
+                    }
                 }
             }
         }
         return multiplying;
     }
-
 }
-
-
 //Specifically, they need you to find the two entries that sum to 2020 and then multiply
 // those two numbers together.
 //For example, suppose your expense report contained the following:
