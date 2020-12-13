@@ -1,5 +1,7 @@
 package Advent;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -8,7 +10,7 @@ public class Input {
 
     public static List addData() {
         Scanner scanner = new Scanner(System.in);
-        ArrayList codeList = new ArrayList();
+        List dataList = new ArrayList();
         System.out.println("Enter data (at the end write done and press Enter):");
 
         while (scanner.hasNext()) {
@@ -16,8 +18,24 @@ public class Input {
             if (i.equals("done")) {
                 break;
             }
-            codeList.add(i);
+            dataList.add(i);
         }
-        return codeList;
+        return dataList;
+    }
+
+    public static List readFromFile(String path) {
+        List dataList = new ArrayList<>();
+        try {
+            File myFile = new File(path);
+            Scanner sc = new Scanner(myFile);
+            while (sc.hasNextLine()) {
+                dataList.add(sc.nextLine());
+            }
+            sc.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("Error loading in data");
+            e.printStackTrace();
+        }
+        return dataList;
     }
 }
