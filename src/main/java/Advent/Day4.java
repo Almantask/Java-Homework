@@ -33,7 +33,7 @@ public class Day4 {
 
     private static boolean validation2(Object s) {
         List passportFields = new ArrayList(Arrays.asList(s.toString().split("[,; \t\n\r]+")));
-        HashMap<String, String> fields = new HashMap<String, String>();
+        HashMap<String, String> fields = new HashMap<>();
         for (Object passportField : passportFields) {
             String o = passportField.toString();
             String[] array = o.split(":");
@@ -59,7 +59,7 @@ public class Day4 {
                 pid.length() == 9;
     }
 
-    public static boolean heightValidation (String height) {
+    private static boolean heightValidation (String height) {
         if (height.contains("cm")) {
             int hgt = Integer.parseInt(height.replace("cm", ""));
             return hgt >= 150 && hgt  <= 193;
@@ -71,7 +71,7 @@ public class Day4 {
     return false;
     }
 
-    public static boolean eyeColor(String string) {
+    private static boolean eyeColor(String string) {
         return string.equals("amb") ||
                 string.equals("blu") ||
                 string.equals("brn") ||
@@ -81,16 +81,14 @@ public class Day4 {
                 string.equals("oth");
     }
 
-    public static List<String> rewriteList(List list) {
-        String listString = "";
+    private static List<String> rewriteList(List list) {
+        StringBuilder listString = new StringBuilder();
         for (Object o : list) {
-            if (!o.equals("")) {
-            } else {
+            if (o.equals("")) {
                 o = ",";
             }
-            listString += o + "\t";
+            listString.append(o).append("\t");
         }
-        List<String> rewrited = Arrays.asList(listString.split(","));
-        return rewrited;
+        return Arrays.asList(listString.toString().split(","));
     }
 }
