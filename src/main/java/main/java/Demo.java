@@ -10,6 +10,7 @@ public class Demo {
         String path = "C:\\Users\\Augis\\Desktop\\JAVA\\Advent Input\\Day6.txt";
         List input = Input.readFromFile(path);
 
+        System.out.println(Day6.solveDay6_1(input));
         System.out.println(Day6.solveDay6_2(input));
         }
     }

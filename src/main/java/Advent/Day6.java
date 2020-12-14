@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Day6 {
 
-    public static long solveDay6(List<String> input) {
+    public static long solveDay6_1 (List<String> input) {
         List<String> rew = rewrite(input);
         long sumYes = 0;
         for (Object o : rew) {
@@ -22,7 +22,7 @@ public class Day6 {
         return sumYes;
     }
 
-    public static int countYes2(Object o) {
+    private static int countYes2(Object o) {
         List<String> answers = Arrays.asList(o.toString().split("[,; \t\n\r]+"));
         String max = Collections.max(answers, Comparator.comparing(String::length));
         char[] chars = max.toCharArray();
@@ -37,24 +37,24 @@ public class Day6 {
         return yes;
     }
 
-    public static long countYes(Object o) {
+    private static long countYes(Object o) {
         String a = o.toString().replace(" ", "");
         return a.chars().distinct().count();
     }
 
-    public static List<String> rewrite(List input) {
-        List<String> rewrited = new ArrayList<>();
-        String s = "";
+    private static List<String> rewrite(List<String> input) {
+        List<String> rew = new ArrayList<>();
+        StringBuilder s = new StringBuilder();
         for (int i = 0; i < input.size(); i++) {
             Object o = input.get(i);
             if (!o.toString().equals("") && i < input.size() - 1) {
-                s += o + " ";
+                s.append(o).append(" ");
                 continue;
             }
-            s += o + " ";
-            rewrited.add(s);
-            s = "";
+            s.append(o).append(" ");
+            rew.add(s.toString());
+            s = new StringBuilder();
         }
-        return rewrited;
+        return rew;
     }
 }
