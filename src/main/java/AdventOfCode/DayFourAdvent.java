@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class DayFourAdvent {
     public static void main(String[] args) throws FileNotFoundException {
-        List<String> file = readFile("passportInfoExample.txt");
+        List<String> file = readFile("passportInfo.txt");
         System.out.println(validPassportsPartOne(file));
         System.out.println(validPassportsPartTwo(file));
 
@@ -66,28 +66,26 @@ public class DayFourAdvent {
             for (int j = 0; j < keys.length; j += 2) {
                 if (keys[j].equals("eyr")) {
                     eyr = keys[j + 1];
-                    if (!(Integer.parseInt(eyr) >= 2020) && !(Integer.parseInt(eyr) <= 2030)) {
-                        eyr = null;
-                    }
+                    if ((Integer.parseInt(eyr) >= 2020) && (Integer.parseInt(eyr) <= 2030)) {
+                        eyr = keys[j + 1];
+                    } else {eyr = null;}
                 }
                 if (keys[j].equals("iyr")) {
                     iyr = keys[j + 1];
-                    if (!(Integer.parseInt(iyr) >= 2010) && !(Integer.parseInt(iyr) <= 2020)) {
-                        iyr = null;
-                    } else {
+                    if ((Integer.parseInt(iyr) >= 2010) && (Integer.parseInt(iyr) <= 2020)) {
                         iyr = keys[j + 1];
-                    }
+                    } else { iyr = null;}
                 }
                 if (keys[j].equals("hcl")) {
-                    if (keys[j+1].startsWith("#") && keys[j+1].matches("[0-9a-f]") && keys[j+1].length() == 7) {
+                    if (keys[j+1].matches("^#[0-9a-f]{6}") && keys[j+1].length() == 7) {
                             hcl = keys[j + 1];
                     } else {hcl = null;}
                 }
                 if (keys[j].equals("byr")) {
                     byr = keys[j + 1];
-                    if (!(Integer.parseInt(byr) >= 1920) && !(Integer.parseInt(byr) <= 2002)) {
-                        byr = null;
-                    }
+                    if ((Integer.parseInt(byr) >= 1920) && (Integer.parseInt(byr) <= 2002)) {
+                        byr = keys[j + 1];
+                    } else {byr = null;}
                 }
                 if (keys[j].equals("ecl")) {
                     ecl = keys[j + 1];
