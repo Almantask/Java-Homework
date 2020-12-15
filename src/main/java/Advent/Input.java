@@ -8,9 +8,9 @@ import java.util.Scanner;
 
 public class Input {
 
-    public static List addData() {
+    public static List<String> addData() {
         Scanner scanner = new Scanner(System.in);
-        List dataList = new ArrayList();
+        List<String> dataList = new ArrayList<>();
         System.out.println("Enter data (at the end write done and press Enter):");
 
         while (scanner.hasNext()) {
@@ -23,8 +23,8 @@ public class Input {
         return dataList;
     }
 
-    public static List readFromFile(String path) {
-        List dataList = new ArrayList<>();
+    public static List<String> readFromFile(String path) {
+        List<String> dataList = new ArrayList<>();
         try {
             File myFile = new File(path);
             Scanner sc = new Scanner(myFile);
