@@ -50,9 +50,7 @@ public class Day11 {
         char occupied = '#';
         if (ch == empty && occupiedAroundSeat == 0)
             return true;
-        if (ch == occupied && occupiedAroundSeat >= 4)
-            return true;
-        return false;
+        return ch == occupied && occupiedAroundSeat >= 4;
     }
 
     private static int countOccupiedAroundSeat(List<String> strings, int seatRow, int seatNumber) {
@@ -82,11 +80,12 @@ public class Day11 {
         List<String> newMap = new ArrayList<>();
         for (String s : input)
             newMap.add("." + s + ".");
-        String floor = "..";
-        for (char ch : input.get(0).toCharArray())
-            floor += ".";
-        newMap.add(0, floor);
-        newMap.add(floor);
+        StringBuilder floor = new StringBuilder("..");
+        for (char ignored : input.get(0).toCharArray()) {
+            floor.append(".");
+        }
+        newMap.add(0, floor.toString());
+        newMap.add(floor.toString());
         return newMap;
     }
 }
