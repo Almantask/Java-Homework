@@ -6,7 +6,6 @@ import java.util.List;
 public class Day1 {
 
     public static void solve(List<String> input) {
-
         System.out.println("The answer of Day1 part 1 is: " + part1(input));
         System.out.println();
         System.out.println("The answer of Day1 part 2 is: " + part2(input));
