@@ -20,22 +20,21 @@ public class Day15 {
         int[] ints = new int[number];
         int[] numbers = new int[number];
         Arrays.fill(ints, -1);
-        int turn2 = -1;
+        int turn = -1;
         for (int i : input) {
-            turn2 += 1;
-            numbers[turn2] = i;
-            ints[i] = turn2;
+            turn += 1;
+            numbers[turn] = i;
+            ints[i] = turn;
         }
-        int nextNumber2 = 0;
-        while (turn2 + 1 < number) {
-            turn2 += 1;
-            int nextNo = nextNumber2;
+        int nextNumber = 0;
+        while (turn + 1 < number) {
+            turn += 1;
             int secondNextNo = 0;
-            if (ints[nextNo] != -1)
-                secondNextNo = turn2 - ints[nextNo];
-            ints[nextNo] = turn2;
-            numbers[turn2] = nextNo;
-            nextNumber2 = secondNextNo;
+            if (ints[nextNumber] != -1)
+                secondNextNo = turn - ints[nextNumber];
+            ints[nextNumber] = turn;
+            numbers[turn] = nextNumber;
+            nextNumber = secondNextNo;
         }
         return numbers[number - 1];
     }
