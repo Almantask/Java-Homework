@@ -16,11 +16,10 @@ public class Day9 {
     private static long encryptedWeakness (List<String> input) {
         List<Long> numbers = new ArrayList<>();
         long number = 0;
-        long goal = 50047984;
+        long goal = findFirstNotMatchedNumber(input);
         int i = 0;
         int secondLoop = 0;
         while (true){
-            if (number > goal) break;
             numbers.add(Long.parseLong(input.get(i)));
             number += Long.parseLong(input.get(i));
             i += 1;
