@@ -7,6 +7,7 @@ import java.util.Objects;
 public class Day2 {
 
     public static void solve(List<String> input) {
+        System.out.println();
         System.out.println("The answer of Day2 part1 is: " + solvePart1(input));
         System.out.println();
         System.out.println("The answer of Day2 part2 is: " + solvePart2(input));
