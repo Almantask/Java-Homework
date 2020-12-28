@@ -10,7 +10,7 @@ public class FilterAndMap {
         return people
                 .stream()
                 .filter(p -> p.getAge() < 18)
-                .map(p -> p.getName())
+                .map(Person::getName)
                 .collect(Collectors.toSet());
     }
 
