@@ -13,20 +13,19 @@ public class Foo {
     }
 
     public void Foo() {
-        System.out.println(this.a);
-        System.out.println(this.b);
-        System.out.println(this.c);
+        System.out.println("Subtract");
+        System.out.println(this.a - this.c);
     }
 
     public void Bar() {
-        System.out.println(this.a);
+        System.out.println("add and print string");
+        System.out.println(this.a + this.c);
         System.out.println(this.b);
-        System.out.println(this.c);
     }
     public void FooBar() {
-        System.out.println(this.a);
-        System.out.println(this.b);
-        System.out.println(this.c);
+        System.out.println("multiply and print something");
+        System.out.println(this.a * this.c);
+        System.out.println(this.b + "ne");
     }
 
 }
