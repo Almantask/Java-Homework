@@ -13,41 +13,20 @@ public class Foo {
     }
 
     public void Foo() {
-
+        System.out.println(this.a);
+        System.out.println(this.b);
+        System.out.println(this.c);
     }
 
     public void Bar() {
-
+        System.out.println(this.a);
+        System.out.println(this.b);
+        System.out.println(this.c);
     }
     public void FooBar() {
-
+        System.out.println(this.a);
+        System.out.println(this.b);
+        System.out.println(this.c);
     }
 
-    public int getA() {
-        return a;
-    }
-
-    public void setA(int a) {
-        this.a = a;
-    }
-
-    public String getB() {
-        return b;
-    }
-
-    public void setB(String b) {
-        this.b = b;
-    }
-
-    public double getC() {
-        return c;
-    }
-
-    public void setC(double c) {
-        this.c = c;
-    }
-
-    public static int bar(){
-        return 1;
-    }
 }
