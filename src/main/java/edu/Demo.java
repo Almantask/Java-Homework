@@ -1,12 +1,45 @@
 package edu;
 
+import edu.behavioural.*;
 import edu.designpatterns.structural.*;
 import edu.revision.*;
 import edu.revision.temperature.*;
 
+import java.util.stream.Stream;
+
 public class Demo {
     public static void main(String[] args) {
-        demoRevision();
+        //demoRevision();
+        //demoAdapter();
+        //demoCommand();
+        demoDecorator();
+    }
+
+    private static void demoDecorator(){
+        Printer basicPrinter = new BasicPrinter();
+        Printer printerWithColor = new PrinterWithColors(basicPrinter);
+        Printer printerWithCredentialsAndColor = new PrinterWithCredentials(printerWithColor);
+        printerWithCredentialsAndColor.print("Hello world");
+    }
+
+    private static void demoAdapter() {
+        SimpleList<Integer> numbers = new SimpleListImp<>();
+        numbers.insert(1);
+        numbers.get(0);
+        numbers.delete(0);
+    }
+
+    private static void demoCommand(){
+        Stream<Command> commands = Stream.of(
+                new MoveTargetCommand(new Object(), new Object()),
+                new WriteTextCommand("Hei", null)
+        );
+
+        commands
+                .forEach(cmd -> {
+                    cmd.execute();
+                    cmd.undo();
+                });
     }
 
     private static void demoSingleton(){
