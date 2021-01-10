@@ -1,6 +1,6 @@
 package edu.solid;
 
-public final class File {
+public class File {
     private final Reader reader;
     private final Writer writer;
 
