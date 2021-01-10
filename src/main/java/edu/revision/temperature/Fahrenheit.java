@@ -5,4 +5,3 @@ public class Fahrenheit extends Temperature{
             super(value, Unit.F);
         }
     }
-}

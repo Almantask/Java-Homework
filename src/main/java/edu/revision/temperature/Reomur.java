@@ -5,4 +5,3 @@ public class Reomur extends Temperature{
             super(value, Unit.Re);
         }
     }
-}

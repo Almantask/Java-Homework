@@ -24,4 +24,9 @@ public abstract class Temperature{
     public Unit getUnit() {
         return unit;
     }
+
+    @Override
+    public String toString() {
+        return value + " " + unit;
+    }
 }

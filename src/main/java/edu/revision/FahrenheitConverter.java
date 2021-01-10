@@ -1,16 +1,18 @@
 package edu.revision;
 
+import edu.revision.temperature.Celsius;
+import edu.revision.temperature.Fahrenheit;
 import edu.revision.temperature.Temperature;
 
 public class FahrenheitConverter implements OfCelsiusConverter{
     @Override
     public Temperature toCelsius(Temperature temperature) {
-        return new Temperature(temperature.getValue() * 1.04, Temperature.Unit.C);
+        return new Celsius(temperature.getValue() * 1.04);
     }
 
     @Override
     public Temperature fromCelsius(Temperature temperature) {
-        return new Temperature(temperature.getValue() * 0.9, Temperature.Unit.F);
+        return new Fahrenheit(temperature.getValue() * 0.9);
     }
 
     @Override

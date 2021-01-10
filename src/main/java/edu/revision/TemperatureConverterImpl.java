@@ -2,13 +2,14 @@ package edu.revision;
 
 import edu.revision.temperature.Temperature;
 
-import java.util.stream.Stream;
+import java.util.Arrays;
+import java.util.List;
 
 public class TemperatureConverterImpl implements TemperatureConverter{
-    private final Stream<OfCelsiusConverter> converters;
+    private final List<OfCelsiusConverter> converters;
 
-    public TemperatureConverterImpl(Stream<OfCelsiusConverter> converters) {
-        this.converters = converters;
+    public TemperatureConverterImpl(OfCelsiusConverter[] converters) {
+        this.converters = Arrays.asList(converters);
     }
 
     @Override
@@ -21,9 +22,10 @@ public class TemperatureConverterImpl implements TemperatureConverter{
     }
 
     private OfCelsiusConverter getOfCelsiusConverter(Temperature.Unit unit) {
-        return converters
+        return  converters
+                .stream()
                 .filter(c -> c.getUnit() == unit)
                 .findFirst()
-                .get();
+                .orElseThrow(() -> new RuntimeException("No converter found for unit " + unit));
     }
 }
