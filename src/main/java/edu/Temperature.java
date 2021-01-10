@@ -46,15 +46,22 @@ public class Temperature implements ITemperatureActions {
         }
     }
 
-    public String getTemperatureName() {
+    private String getTemperatureName() {
         return temperatureName;
     }
 
-    public double getAmount() {
+    private double getAmount() {
         return amount;
     }
 
-    public void setAmount(double amount) {
+    private void setAmount(double amount) {
         this.amount = amount;
     }
+
+    public double convert(String convertTo) {
+        setAmount(this.toCelsius());
+        return this.fromCelsius(convertTo);
+    }
+
+
 }
