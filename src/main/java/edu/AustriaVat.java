@@ -1,11 +1,9 @@
 package edu;
 
-public class LithuaniaVat implements CountriesWithVatNumber{
-
-
+public class AustriaVat implements  CountriesWithVatNumber{
     @Override
     public String getCountry() {
-        return "Lithuania";
+        return "Austria";
     }
 
     @Override
@@ -15,12 +13,12 @@ public class LithuaniaVat implements CountriesWithVatNumber{
 
     @Override
     public double getReduced1TaxRatio() {
-        return 1.09;
+        return 1.13;
     }
 
     @Override
     public double getReduced2TaxRatio() {
-        return 1.05;
+        return 1.10;
     }
 
     @Override
@@ -30,6 +28,6 @@ public class LithuaniaVat implements CountriesWithVatNumber{
 
     @Override
     public double getReducedTaxRatio() {
-        return -1;
+        return 0;
     }
 }
