@@ -30,6 +30,6 @@ public class LithuaniaVat implements CountriesWithVatNumber{
 
     @Override
     public double getReducedTaxRatio() {
-        return -1;
+        return 0;
     }
 }
