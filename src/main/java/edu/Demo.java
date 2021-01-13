@@ -11,9 +11,9 @@ public class Demo {
     }
 
     private static void demo() {
-        CountriesWithVatNumber[] countriesWithVat = {new LithuaniaVat()};
+        CountriesWithVatNumber[] countriesWithVat = {new LithuaniaVat(), new AustriaVat(), new BelgiumVat(), new BulgariaVat()};
         CalculatorForPriceAfterTaxes calculator = new CalculatorForPriceAfterTaxes(countriesWithVat);
-        System.out.println(calculator.returnValue(10, "Standard", "Lithuania"));
+        System.out.println(calculator.returnValue(10, "Reduced1", "Belgium"));
     }
 
 }
