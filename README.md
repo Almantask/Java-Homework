@@ -2,7 +2,7 @@
 
 ## What is a Pokemon?
 
-Pokemon is a create which can attack. Its attack evolves with every new level.
+Pokemon is a creature which can attack. Its attack evolves with every new level.
 
 ## Your task
 
