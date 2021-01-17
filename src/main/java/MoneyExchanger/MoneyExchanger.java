@@ -12,7 +12,7 @@ public class MoneyExchanger implements IMoneyExchanger {
         this.availableNominalsCount = nominalsCount;
     }
 
-    public MoneyExchanger(double nominal, int nominalsCount, MoneyExchanger next) {
+    public MoneyExchanger(double nominal, int nominalsCount, IMoneyExchanger next) {
         this.nominal = nominal;
         this.availableNominalsCount = nominalsCount;
         this.next = next;
@@ -21,11 +21,13 @@ public class MoneyExchanger implements IMoneyExchanger {
     @Override
     public void Exchange(double money, Map<Double, Integer> change) {
         int exchangedNominalCount = calculateNominalCountToExchange(money);
-        
-        change.put(nominal, exchangedNominalCount);
-        availableNominalsCount -= exchangedNominalCount;
-        money -= exchangedNominalCount * nominal;
-        
+
+        if (exchangedNominalCount > 0) {
+            change.put(nominal, exchangedNominalCount);
+            availableNominalsCount -= exchangedNominalCount;
+            money -= exchangedNominalCount * nominal;
+        }
+
         exchangeLeftovers(money, change);
 
     }
